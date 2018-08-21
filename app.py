@@ -1,6 +1,6 @@
 import MySQLdb
 import os
-from bottle import route, run, template, static_file, request, redirect, response
+from bottle import route, run, template, static_file, request, redirect, response, view
 
 # db_name = {'heroku'}
 # host = {'us-cdbr-iron-east-01.cleardb.net'}
@@ -25,6 +25,7 @@ def top():
     return template('top')
 
 @route("/test")
+@view("test")
 def top_db():
 
     db = MySQLdb.connect(db='heroku_d9c662866ce227f', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user='b4da42a09cc349', passwd='dd235253')
@@ -39,6 +40,6 @@ def top_db():
     result = con.fetchall()
     print(result)
 
-    return template('test', tests=result)
+    return dict(sub = result)
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

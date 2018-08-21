@@ -21,9 +21,7 @@
 </head>
 <body>
   <div class='test'>
-    {% for sub in tests %}
     <p class='test_sub'>{{sub}}</p>
-    {% endfor %}
   </div>
 </body>
 
