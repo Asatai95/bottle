@@ -1,4 +1,4 @@
-import heroku_d9c662866ce227f
+import MySQLdb
 import os
 from bottle import route, run, template, static_file, request, redirect, response
 
