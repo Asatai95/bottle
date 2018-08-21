@@ -1,4 +1,4 @@
-import SQLite3
+import heroku_d9c662866ce227f
 import os
 from bottle import route, run, template, static_file, request, redirect, response
 
@@ -19,7 +19,7 @@ def top():
 @route("/test")
 def top_db():
 
-    db = SQLite3.connect(db='heroku', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user=u'b8b921e229e863', passwd='a87b2e7e')
+    db = .connect(db='heroku', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user='b4da42a09cc349', passwd='dd235253')
     con = db.cursor()
 
     sql = 'select test from test where id = 1'
