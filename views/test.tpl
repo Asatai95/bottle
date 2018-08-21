@@ -22,7 +22,7 @@
 <body>
   <div class='test'>
     <p class='test_sub'>{{_int}}</p>
-    <p class='test_sub'>{{sub["test"]}}</p>
+    <p class='test_sub'>{{sub}}</p>
 
   </div>
 </body>
