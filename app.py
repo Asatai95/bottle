@@ -38,7 +38,7 @@ def top_db():
     print(test)
 
     result = con.fetchall()
-    _int = int(result["id"])
+    _int = result[0][0]
     print(result)
 
     return dict(sub = result, _int = _int)
