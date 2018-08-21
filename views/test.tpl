@@ -21,8 +21,9 @@
 </head>
 <body>
   <div class='test'>
-    <p class='test_sub'>{{sub}}</p>
-    <p class='test_sub'>{{sub_1}}</p>
+    <p class='test_sub'>{{sub["id"]}}</p>
+    <p class='test_sub'>{{sub["test"]}}</p>
+
   </div>
 </body>
 

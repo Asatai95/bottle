@@ -38,11 +38,8 @@ def top_db():
     print(test)
 
     result = con.fetchall()
-    result = result[0][0]
-    result_1 = result[1][1]
-    print(result_1)
     print(result)
 
-    return dict(sub = result, sub_1 = result_1)
+    return dict(sub = result)
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
