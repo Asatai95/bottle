@@ -38,6 +38,7 @@ def top_db():
     print(test)
 
     result = con.fetchall()
+    result = result[0][0]
     print(result)
 
     return dict(sub = result)
