@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.test {
+  text-align: center;
+}
+
+.test_sub {
+  font-size: 25px;
+  font-weight: 800;
+}
