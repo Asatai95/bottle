@@ -1,4 +1,4 @@
-import mysql
+import MySQLdb
 import os
 from bottle import route, run, template, static_file, request, redirect, response
 
@@ -27,7 +27,7 @@ def top():
 @route("/test")
 def top_db():
 
-    connection = mysql.createConnection(db='heroku', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user='b4da42a09cc349', passwd='dd235253')
+    db = MySQLdb.connect(db='heroku', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user='b4da42a09cc349', passwd='dd235253')
     con = connection.cursor()
 
     sql = 'select test from test where id = 1'
