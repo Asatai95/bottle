@@ -1,4 +1,4 @@
-import psycopg2
+import SQLite3
 import os
 from bottle import route, run, template, static_file, request, redirect, response
 
@@ -19,7 +19,7 @@ def top():
 @route("/test")
 def top_db():
 
-    db = psycopg2.connect(db='heroku', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user=u'b8b921e229e863', passwd='a87b2e7e')
+    db = SQLite3.connect(db='heroku', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user=u'b8b921e229e863', passwd='a87b2e7e')
     con = db.cursor()
 
     sql = 'select test from test where id = 1'
