@@ -1,3 +1,4 @@
+import mysql
 import os
 from bottle import route, run, template, static_file, request, redirect, response
 
