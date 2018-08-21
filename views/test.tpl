@@ -21,7 +21,7 @@
 </head>
 <body>
   <div class='test'>
-    <p class='test_sub'>{{sub["id"]}}</p>
+    <p class='test_sub'>{{int(sub["id"])}}</p>
     <p class='test_sub'>{{sub["test"]}}</p>
 
   </div>
