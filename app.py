@@ -28,7 +28,7 @@ def top():
 def top_db():
 
     db = MySQLdb.connect(db='heroku', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user='b4da42a09cc349', passwd='dd235253')
-    con = connection.cursor()
+    con = db.cursor()
 
     sql = 'select test from test where id = 1'
     test = con.execute(sql)
