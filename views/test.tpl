@@ -15,6 +15,14 @@
 
   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
 
+
+
+
+  <title>Heroku</title>
+
+</head>
+
+<body>
   <script>
     function statusChangeCallback(response) {
       console.log('statusChangeCallback');
@@ -39,6 +47,7 @@
         statusChangeCallback(response);
       });
     }
+
     window.fbAsyncInit = function() {
       FB.init({
         appId: '{704097009951110}',
@@ -75,13 +84,7 @@
       });
     }
   </script>
-
-
-  <title>Heroku</title>
-
-</head>
-
-<body>
+  
   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
   </fb:login-button>
 
