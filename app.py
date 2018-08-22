@@ -1,6 +1,15 @@
 import MySQLdb
 import os
 from bottle import route, run, template, static_file, request, redirect, response, view
+import stripe
+
+stripe_keys = {
+  'secret_key': os.environ['SECRET_KEY'],
+  'publishable_key': os.environ['PUBLISHABLE_KEY']
+}
+
+stripe.api_key = stripe_keys['secret_key']
+
 
 # db_name = {'heroku'}
 # host = {'us-cdbr-iron-east-01.cleardb.net'}
@@ -20,9 +29,30 @@ def test(path):
     return static_file(path, root='static')
 
 @route("/")
+@view("top")
 def top():
 
-    return template('top')
+    return dict(key=stripe_keys['publishable_key'])
+
+@route("/test_sub")
+@view("test")
+def test_sub():
+
+    amount = 500
+
+    customer = stripe.Customer.create(
+        email='customer@example.com',
+        card=request.form['stripeToken']
+    )
+
+    charge = stripe.Charge.create(
+        customer=customer.id,
+        amount=amount,
+        currency='usd',
+        description='Flask Charge'
+    )
+
+    return dict(amount=amount)
 
 @route("/test")
 @view("test")

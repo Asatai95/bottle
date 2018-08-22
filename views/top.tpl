@@ -22,6 +22,7 @@
 <body>
   <div class='test'>
     <p class='test_sub'>TEST</p>
+    <h2>Thanks, you payed <strong>$5.00</strong>!</h2>
   </div>
 </body>
 

@@ -101,6 +101,15 @@
 
 
 
+  <form action="/charge" method="post">
+    <article>
+      <label>Amount: $5.00</label>
+    </article>
+
+    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{ key }}"></script>
+  </form>
+
+
   <div id="status">
   </div>
 

@@ -14,3 +14,11 @@ fb:login-button {
   height: 100px;
   border: 1px solid black;
 }
+
+form article label {
+  display: block;
+  margin: 5px;
+}
+form .submit {
+  margin: 15px 0;
+}
