@@ -48,11 +48,11 @@
       });
     }
 
-    function Logout() {
-      FB.Logout(function(response) {
-        FB.Auth.setAuthResponse(null, 'unknown');
-      });
-    }
+    // function Logout() {
+    //   FB.Logout(function(response) {
+    //     FB.Auth.setAuthResponse(null, 'unknown');
+    //   });
+    // }
 
     window.fbAsyncInit = function() {
       FB.init({
@@ -67,9 +67,9 @@
         statusChangeCallback(response);
       });
 
-      FB.Logout(function(response) {
-        FB.Auth.setAuthResponse(null, 'unknown');
-      });
+      // FB.Logout(function(response) {
+      //   FB.Auth.setAuthResponse(null, 'unknown');
+      // });
 
       FB.AppEvents.logPageView();
 
@@ -99,7 +99,7 @@
   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
   </fb:login-button>
 
-  <fb:login-button autologoutlink="true" onlogin="Logout();"></fb:login-button>
+  <fb:login-button autologoutlink="true" onclick="FB.logout(function() { document.location.reload(); });""></fb:login-button>
 
   <div id="status">
   </div>
