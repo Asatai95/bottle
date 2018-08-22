@@ -49,8 +49,8 @@
     }
 
     function checkLogoutState() {
-      FB.getLogoutStatus(function(response) {
-        
+      FB.Logout(function(response) {
+
       });
     }
 
@@ -67,7 +67,7 @@
         statusChangeCallback(response);
       });
 
-      FB.getLogoutStatus(function(response) {
+      FB.Logout(function(response) {
 
       });
 
