@@ -29,7 +29,7 @@ def test(path):
     return static_file(path, root='static')
 
 @route("/")
-@view("top")
+@view("test")
 def top():
 
     return dict(key=stripe_keys['publishable_key'])
