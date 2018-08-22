@@ -24,6 +24,8 @@
     <p class='test_sub'>{{_int}}</p>
     <p class='test_sub'>{{sub}}</p>
 
+
+    <button><a href="/login/facebook_request_auth">Facebookでログイン</a></button>
   </div>
 </body>
 
