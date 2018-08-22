@@ -48,6 +48,12 @@
       });
     }
 
+    function checkLogoutState() {
+      FB.getLogoutStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    }
+
     window.fbAsyncInit = function() {
       FB.init({
         appId: '704097009951110',
@@ -58,6 +64,10 @@
       });
 
       FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+
+      FB.getLogoutStatus(function(response) {
         statusChangeCallback(response);
       });
 
@@ -88,6 +98,9 @@
 
   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
   </fb:login-button>
+
+  <fb:logout-button scope="public_profile,email" onlogin="checkLogoutState();">
+  </fb:logout-button>
 
   <div id="status">
   </div>
