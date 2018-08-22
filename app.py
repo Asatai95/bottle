@@ -10,7 +10,7 @@ stripe_keys = {
 
 stripe.api_key = stripe_keys['secret_key']
 
-
+# test
 # db_name = {'heroku'}
 # host = {'us-cdbr-iron-east-01.cleardb.net'}
 # username = {'b8b921e229e863'}
