@@ -76,7 +76,6 @@
     }
   </script>
 
-  <script type="text/javascript" src="static/js/common.js"></script>
 
   <title>Heroku</title>
 
