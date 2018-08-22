@@ -13,7 +13,7 @@
   <link rel="stylesheet" media='screen and (min-width:376px) and (max-width:768px)' href="static/css/top_pad.css">
   <link rel="stylesheet" media='screen and (min-width:769px)' href="static/css/top.css"> -->
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
 
   <script>
     function statusChangeCallback(response) {
