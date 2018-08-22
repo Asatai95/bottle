@@ -48,7 +48,7 @@
       });
     }
 
-    function checkLogoutState() {
+    function Logout() {
       FB.Logout(function(response) {
 
       });
