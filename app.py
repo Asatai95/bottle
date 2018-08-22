@@ -4,8 +4,8 @@ from bottle import route, run, template, static_file, request, redirect, respons
 import stripe
 
 stripe_keys = {
-  'secret_key': os.environ['SECRET_KEY'],
-  'publishable_key': os.environ['PUBLISHABLE_KEY']
+  'secret_key': os.environ['sk_live_jSdNiWzNTAjyK8jMz7JZ1vvp'],
+  'publishable_key': os.environ['pk_live_BeJqMkXLopr3HjiKYmyNMeh0']
 }
 
 stripe.api_key = stripe_keys['secret_key']
