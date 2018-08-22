@@ -50,10 +50,10 @@
 
     window.fbAsyncInit = function() {
       FB.init({
-        appId: '{704097009951110}',
+        appId: 'your-app-id',
         cookie: true,
         xfbml: true,
-        version: '{v3.1}'
+        version: 'v3.1'
       });
 
       FB.getLoginStatus(function(response) {
@@ -84,7 +84,7 @@
       });
     }
   </script>
-  
+
   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
   </fb:login-button>
 
