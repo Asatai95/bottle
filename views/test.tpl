@@ -99,8 +99,7 @@
   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
   </fb:login-button>
 
-  <fb:logout-button scope="public_profile,email" onlogin="checkLogoutState();">
-  </fb:logout-button>
+  <fb:login-button autologoutlink="true" onlogin="Logout();"></fb:login-button>
 
   <div id="status">
   </div>
