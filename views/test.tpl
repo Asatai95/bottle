@@ -96,10 +96,10 @@
     }
   </script>
 
-  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+  <fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();" onclick="FB.logout(function() { document.location.reload(); });">
   </fb:login-button>
 
-  <fb:logout-button autologoutlink="true" onclick="FB.logout(function() { document.location.reload(); });"></fb:logout-button>
+
 
   <div id="status">
   </div>
