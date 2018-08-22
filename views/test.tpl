@@ -50,7 +50,7 @@
 
     // function Logout() {
     //   FB.Logout(function(response) {
-    //     FB.Auth.setAuthResponse(null, 'unknown');
+    //
     //   });
     // }
 
@@ -68,7 +68,7 @@
       });
 
       // FB.Logout(function(response) {
-      //   FB.Auth.setAuthResponse(null, 'unknown');
+      //
       // });
 
       FB.AppEvents.logPageView();
