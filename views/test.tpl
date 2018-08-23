@@ -96,7 +96,7 @@
   </script>
 
 
-  <form action="/test" method="post">
+  <form action="/test_sub" method="post">
     <article>
       <label>Amount: $5.00</label>
     </article>
