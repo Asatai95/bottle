@@ -1,1 +1,1 @@
-web: python app.py 
+web: SECRET_KEY=sk_test_TfT4MRhaeKSyesEaOEwDMhiy PUBLISHABLE_KEY=pk_test_Y5ch5USFdFncGBeo1am8JegI python app.py 
