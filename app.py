@@ -4,11 +4,11 @@ from bottle import route, run, template, static_file, request, redirect, respons
 import stripe
 
 stripe_keys = {
-  'SECRET_KEY': os.environ['sk_live_jSdNiWzNTAjyK8jMz7JZ1vvp'],
-  'PUBLISHABLE_KEY': os.environ['pk_live_BeJqMkXLopr3HjiKYmyNMeh0']
+  'secret_key': os.environ['SECRET_KEY'],
+  'publishable_key': os.environ['PUBLISHABLE_KEY']
 }
 
-stripe.api_key = stripe_keys['SECRET_KEY']
+stripe.api_key = stripe_keys['secret_key']
 
 # test
 # db_name = {'heroku'}
