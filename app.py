@@ -50,12 +50,12 @@ def test_sub():
 
     amount = '500'
 
-    stripe.Customer.create(
+    customer = stripe.Customer.create(
         email='customer@example.com',
-        card=request.form['stripeToken']
+        source=request.form['stripeToken']
     )
 
-    stripe.Charge.create(
+    charge = stripe.Charge.create(
         customer=customer.id,
         amount=amount,
         currency='usd',
