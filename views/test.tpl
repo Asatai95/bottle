@@ -98,10 +98,10 @@
 
   <form action="/test_sub" method="post">
     <article>
-      <label>Amount: $5.00</label>
+      <label>Amount: ¥500</label>
     </article>
 
-    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{ key }}" data-locale="auto" data-amount="500" data-name="TEST" data-currency="jpy" data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="ja"></script>
+    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{ key }}" data-locale="auto" data-amount="500 " data-name="TEST" data-currency="jpy" data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="ja"></script>
   </form>
 
   <fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();" onclick="FB.logout(function() { document.location.reload(); });">

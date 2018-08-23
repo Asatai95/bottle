@@ -44,18 +44,18 @@ def test_view():
 
     return dict(key=stripe_keys['publishable_key'])
 
-@route("/test_sub", method='POST')
+@route("/test_sub", methods='POST')
 @view("top")
 def test_sub():
 
     amount = '500'
 
-    customer = stripe.Customer.create(
+    stripe.Customer.create(
         email='customer@example.com',
         card=request.form['stripeToken']
     )
 
-    charge = stripe.Charge.create(
+    stripe.Charge.create(
         customer=customer.id,
         amount=amount,
         currency='usd',
