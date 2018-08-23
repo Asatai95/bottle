@@ -1,1 +1,1 @@
-web: PUBLISHABLE_KEY=pk_live_BeJqMkXLopr3HjiKYmyNMeh0 SECRET_KEY=sk_live_jSdNiWzNTAjyK8jMz7JZ1vvp python app.py
+web: python app.py PUBLISHABLE_KEY=pk_live_BeJqMkXLopr3HjiKYmyNMeh0 SECRET_KEY=sk_live_jSdNiWzNTAjyK8jMz7JZ1vvp 
