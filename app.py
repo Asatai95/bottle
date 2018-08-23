@@ -29,12 +29,12 @@ def test(path):
     return static_file(path, root='static')
 
 @route("/")
-@view("test")
+@view("top")
 def top():
 
     return dict(key=stripe_keys['publishable_key'])
 
-@route("/test_sub")
+@route("/test_sub", methods='POST')
 @view("test")
 def test_sub():
 
