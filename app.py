@@ -48,7 +48,7 @@ def test_view():
 @view("top")
 def test_sub():
 
-    amount = '500'
+    amount = '$5.00'
 
     customer = stripe.Customer.create(
         email='customer@example.com',
