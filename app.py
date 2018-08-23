@@ -62,7 +62,7 @@ def test_sub():
         description='Bottle Charge'
     )
 
-    return redirect('https://app-py-heroku.herokuapp.com/test_sub')
+    return redirect('/test_sub')
 
 # @route("/test")
 # @view("test")
