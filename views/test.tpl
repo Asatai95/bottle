@@ -96,7 +96,7 @@
   </script>
 
 
-  <form action="/test_sub" method="post">
+  <form action="/test" method="post">
     <article>
       <label>Amount: ¥500</label>
     </article>
