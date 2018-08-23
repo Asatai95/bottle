@@ -4,11 +4,11 @@ from bottle import route, run, template, static_file, request, redirect, respons
 import stripe
 
 stripe_keys = {
-  'secret_key': os.environ['sk_live_jSdNiWzNTAjyK8jMz7JZ1vvp'],
-  'publishable_key': os.environ['pk_live_BeJqMkXLopr3HjiKYmyNMeh0']
+  'SECRET_KEY': os.environ['sk_live_jSdNiWzNTAjyK8jMz7JZ1vvp'],
+  'PUBLISHABLE_KEY': os.environ['pk_live_BeJqMkXLopr3HjiKYmyNMeh0']
 }
 
-stripe.api_key = stripe_keys['secret_key']
+stripe.api_key = stripe_keys['SECRET_KEY']
 
 # test
 # db_name = {'heroku'}
@@ -32,7 +32,7 @@ def test(path):
 @view("top")
 def top():
 
-    return dict(key=stripe_keys['publishable_key'])
+    return dict(key=stripe_keys['PUBLISHABLE_KEY'])
 
 @route("/test")
 def test():
@@ -59,7 +59,7 @@ def test_sub():
         customer=customer.id,
         amount=amount,
         currency='usd',
-        description='Flask Charge'
+        description='Bottle Charge'
     )
 
     return dict(amount=amount)
