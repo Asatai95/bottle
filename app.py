@@ -29,10 +29,9 @@ def test(path):
     return static_file(path, root='static')
 
 @route("/")
-@view("top")
 def top():
 
-    return dict(key=stripe_keys['PUBLISHABLE_KEY'])
+    return template("top")
 
 @route("/test")
 def test():
@@ -40,12 +39,13 @@ def test():
     return template('top')
 
 @route("/test_sub")
+@view("test")
 def test_sub_view():
 
-    return template('test')
+    return dict(key=stripe_keys['PUBLISHABLE_KEY'])
 
 @route("/test_sub", method='POST')
-@view("test")
+@view("top")
 def test_sub():
 
     amount = 500
