@@ -62,7 +62,7 @@ def test_sub():
         description='Bottle Charge'
     )
 
-    return redirect('/test_sub')
+    return template("top", amount=amount)
 
 # @route("/test")
 # @view("test")
