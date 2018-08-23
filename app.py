@@ -52,7 +52,7 @@ def test_sub():
 
     customer = stripe.Customer.create(
         email='customer@example.com',
-        source=herequest.form['stripeToken']
+        source=request.form['stripeToken']
     )
 
     charge = stripe.Charge.create(
