@@ -38,9 +38,9 @@ def test():
 
     return template('top')
 
-@route("/test_sub")
+@route("/test")
 @view("test")
-def test_sub_view():
+def test_view():
 
     return dict(key=stripe_keys['PUBLISHABLE_KEY'])
 
