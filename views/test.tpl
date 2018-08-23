@@ -95,10 +95,6 @@
     }
   </script>
 
-  <fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();" onclick="FB.logout(function() { document.location.reload(); });">
-  </fb:login-button>
-
-
 
   <form action="/test_sub" method="post">
     <article>
@@ -107,6 +103,9 @@
 
     <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{ key }}" data-locale="auto"></script>
   </form>
+
+  <fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();" onclick="FB.logout(function() { document.location.reload(); });">
+  </fb:login-button>
 
 
   <div id="status">
