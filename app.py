@@ -58,7 +58,6 @@ def test_sub():
     charge = stripe.Charge.create(
         customer=customer.id,
         amount=amount,
-        source=source,
         currency='usd',
         description='Bottle Charge'
     )
