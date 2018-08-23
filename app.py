@@ -34,7 +34,12 @@ def top():
 
     return dict(key=stripe_keys['publishable_key'])
 
-@route("/test_sub", methods='POST')
+@route("/test_sub")
+def test_sub_view():
+
+    return template('test')
+
+@route("/test_sub", method='POST')
 @view("test")
 def test_sub():
 
@@ -54,26 +59,26 @@ def test_sub():
 
     return dict(amount=amount)
 
-@route("/test")
-@view("test")
-def top_db():
-
-    db = MySQLdb.connect(db='heroku_d9c662866ce227f', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user='b4da42a09cc349', passwd='dd235253')
-    con = db.cursor()
-
-    sql = 'select id, test from test where id = 1'
-    test = con.execute(sql)
-    db.commit()
-    print(sql)
-    print(test)
-
-    result = con.fetchall()
-    _int = result[0][0]
-    sub = result[0][1]
-    print(result)
-    print(_int)
-    print(sub)
-
-    return dict(sub = sub, _int = _int)
+# @route("/test")
+# @view("test")
+# def top_db():
+#
+#     db = MySQLdb.connect(db='heroku_d9c662866ce227f', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user='b4da42a09cc349', passwd='dd235253')
+#     con = db.cursor()
+#
+#     sql = 'select id, test from test where id = 1'
+#     test = con.execute(sql)
+#     db.commit()
+#     print(sql)
+#     print(test)
+#
+#     result = con.fetchall()
+#     _int = result[0][0]
+#     sub = result[0][1]
+#     print(result)
+#     print(_int)
+#     print(sub)
+#
+#     return dict(sub = sub, _int = _int)
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
