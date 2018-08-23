@@ -42,7 +42,7 @@ def test():
 @view("test")
 def test_view():
 
-    return dict(key=stripe_keys['PUBLISHABLE_KEY'])
+    return dict(key=stripe_keys['publishable_key'])
 
 @route("/test_sub", method='POST')
 @view("top")
