@@ -33,7 +33,7 @@ def top():
 
     return template("top")
 
-@route("/test")
+@route("/test_sub")
 def test():
 
     return template('top')
@@ -44,8 +44,8 @@ def test_view():
 
     return dict(key=stripe_keys['publishable_key'])
 
-@route("/test_sub", methods='POST')
-@view("top")
+@route("/test", methods='POST')
+@view("test")
 def test_sub():
 
     amount = '500'
@@ -62,7 +62,7 @@ def test_sub():
         description='Bottle Charge'
     )
 
-    return dict(amount=amount)
+    return redirect('https://app-py-heroku.herokuapp.com/test_sub')
 
 # @route("/test")
 # @view("test")
