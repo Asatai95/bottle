@@ -34,6 +34,11 @@ def top():
 
     return dict(key=stripe_keys['publishable_key'])
 
+@route("/test")
+def test():
+
+    return template('top')
+
 @route("/test_sub")
 def test_sub_view():
 

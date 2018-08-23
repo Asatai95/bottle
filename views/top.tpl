@@ -6,7 +6,6 @@
   <meta name='keywords' content=''>
   <meta name='description' content="">
   <meta name='viewport' content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="shortcut icon" href="static/img/twitter.png"> -->
   <link rel="stylesheet" media="screen" href="static/css/top.css">
 
   <!-- <link rel="stylesheet" media='screen and (min-width:0) and (max-width:375px)' href="static/css/top_sp.css">
