@@ -25,7 +25,7 @@ def email():
     message = 'TESTだよ'
 
     msg = MIMEText(message, "html")
-    msg["Subject"] = Subject
+    msg["Subject"] = subject
     msg["To"] = to_email
     msg["From"] = from_email
 
