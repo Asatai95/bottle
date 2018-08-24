@@ -1,6 +1,8 @@
 import MySQLdb
-import os
 from bottle import route, run, template, static_file, request, redirect, response, view
+from email.mine.text import MIMEText
+import smtplib
+import os
 import stripe
 
 stripe_keys = {
@@ -10,19 +12,27 @@ stripe_keys = {
 
 stripe.api_key = stripe_keys['secret_key']
 
-# test
-# db_name = {'heroku'}
-# host = {'us-cdbr-iron-east-01.cleardb.net'}
-# username = {'b8b921e229e863'}
-# passwd = {'a87b2e7e'}
+@route('/email')
+def send_email(email, test, average, count):
+    from_email="defense433@gmail.com"
+    from_password="Asatai95!"
 
-# connection = mysql.createConnection({
-#   host     : 'us-cdbr-iron-east-01.cleardb.net',
-#   user     : 'b4da42a09cc349',
-#   password : 'dd235253',
-#   database : 'heroku'
-# });
+    to_email = to_email
 
+    subject = "TEST"
+    message = 'TESTだよ'
+
+    msg = MIMEText(message, "html")
+    msg["Subject"] = Subject
+    msg["To"] = to_email
+    msg["From"] = from_email
+
+    gmail = smtplib.SMTP("smtp.gmail.com", 587)
+    gmail.starttls()
+    gmail.login(from_email, from_password)
+    gmail.send_message(msg)
+
+    return template("top")
 
 @route("/static/:path#.+#", name='static')
 def test(path):
