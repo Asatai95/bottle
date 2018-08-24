@@ -12,10 +12,12 @@ stripe_keys = {
 
 stripe.api_key = stripe_keys['secret_key']
 
-@route('/email')
 def send_email(email, test, average, count):
     from_email="defense433@gmail.com"
     from_password="Asatai95!"
+
+@route('/email')
+def email():
 
     to_email = to_email
 
