@@ -19,7 +19,7 @@ def send_email(email, test, average, count):
 @route('/email')
 def email():
 
-    to_email = to_email
+    to_email = email
 
     subject = "TEST"
     message = 'TESTだよ'
