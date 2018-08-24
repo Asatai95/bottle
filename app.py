@@ -12,13 +12,11 @@ stripe_keys = {
 
 stripe.api_key = stripe_keys['secret_key']
 
-def send_email(email, test, average, count):
-    from_email="defense433@gmail.com"
-    from_password="Asatai95!"
+
 
 @route('/email')
-def email():
-
+def send_email(email, test, average, count):
+    
     from_email="defense433@gmail.com"
     from_password="Asatai95!"
 
@@ -27,7 +25,7 @@ def email():
     subject = "TEST"
     message = 'TESTだよ'
 
-    msg = MIMEText(message, "html")
+    msg = MIMEText(message)
     msg["Subject"] = subject
     msg["To"] = to_email
     msg["From"] = from_email
