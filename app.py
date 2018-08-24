@@ -1,6 +1,6 @@
 import MySQLdb
 from bottle import route, run, template, static_file, request, redirect, response, view
-from email.mine.text import MIMEText
+from email.mime.text import MIMEText
 import smtplib
 import os
 import stripe
