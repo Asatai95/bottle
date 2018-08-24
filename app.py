@@ -19,6 +19,9 @@ def send_email(email, test, average, count):
 @route('/email')
 def email():
 
+    from_email="defense433@gmail.com"
+    from_password="Asatai95!"
+
     to_email = email
 
     subject = "TEST"
