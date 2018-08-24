@@ -15,8 +15,9 @@ stripe.api_key = stripe_keys['secret_key']
 
 
 @route('/email')
+@view('top')
 def send_email(email, test, average, count):
-    
+
     from_email="defense433@gmail.com"
     from_password="Asatai95!"
 
@@ -35,7 +36,7 @@ def send_email(email, test, average, count):
     gmail.login(from_email, from_password)
     gmail.send_message(msg)
 
-    return template("top")
+    return dict(email=email, test=test, average=average, count=count)
 
 @route("/static/:path#.+#", name='static')
 def test(path):
