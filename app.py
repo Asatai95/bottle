@@ -1,6 +1,7 @@
 import MySQLdb
 from bottle import route, run, template, static_file, request, redirect, response, view
 from email.mime.text import MIMEText
+import email
 import smtplib
 import os
 import stripe
@@ -36,7 +37,7 @@ def send_email():
     gmail.login(from_email, from_password)
     gmail.send_message(msg)
 
-    return msg, 
+    return msg,
 
 @route("/static/:path#.+#", name='static')
 def test(path):
