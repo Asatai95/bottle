@@ -21,6 +21,7 @@ def sendNotification():
     recepients_list = "defense433@gmail.com"
     sendmail(recepients_list, subject, message)
 
+@route('/email')
 def sendmail(to_addr_list, subject, message):
 
     to_email = email
