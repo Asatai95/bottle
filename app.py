@@ -14,9 +14,6 @@ stripe_keys = {
 stripe.api_key = stripe_keys['secret_key']
 
 
-
-@route('/email')
-@view('top')
 def sendNotification():
     subject = "TEST"
     message = 'TESTだよ'
@@ -44,7 +41,7 @@ def sendmail(to_addr_list, subject, message):
     except:
         print('error')
     server.quit()
-    
+
 sendNotification()
 
 @route("/static/:path#.+#", name='static')
