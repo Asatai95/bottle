@@ -17,27 +17,35 @@ stripe.api_key = stripe_keys['secret_key']
 
 @route('/email')
 @view('top')
-def send_email():
-
-    from_email="defense433@gmail.com"
-    from_password="Asatai95!"
-
-    to_email = email
-
+def sendNotification():
     subject = "TEST"
     message = 'TESTだよ'
+    recepients_list = "defense433@gmail.com"
+    sendmail(recepients_list, subject, message)
+
+def sendmail(to_addr_list, subject, message):
+
+    username = "defense433@gmail.com"
+    from_email="defense433@gmail.com"
+    from_password="Asatai95!"
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.ehlo()
+    server.starttls()
+    server.login(username, from_password)
 
     msg = MIMEText(message)
     msg["Subject"] = subject
     msg["To"] = to_email
     msg["From"] = from_email
 
-    gmail = smtplib.SMTP("smtp.gmail.com", 587)
-    gmail.starttls()
-    gmail.login(from_email, from_password)
-    gmail.send_message(msg)
-
-    return msg,
+    try:
+        server.sendmail(from_email, to_addr_lost, newmessage)
+        print('test')
+    except:
+        print('error')
+    server.quit()
+    
+sendNotification()
 
 @route("/static/:path#.+#", name='static')
 def test(path):
