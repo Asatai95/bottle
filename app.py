@@ -22,6 +22,8 @@ def sendNotification():
 
 def sendmail(to_addr_list, subject, message):
 
+    to_email = email
+
     username = "defense433@gmail.com"
     from_email="defense433@gmail.com"
     from_password="Asatai95!"
