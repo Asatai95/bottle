@@ -5,6 +5,8 @@ import email
 import smtplib
 import os
 import stripe
+import sys
+sys.setrecursionlimit(10000)
 
 stripe_keys = {
   'secret_key': os.environ['SECRET_KEY'],
