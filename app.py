@@ -15,7 +15,7 @@ stripe.api_key = stripe_keys['secret_key']
 
 
 @route('/email')
-def send_email():
+def send_email(email, subject, from_email, from_password):
 
     from_email="defense433@gmail.com"
     from_password="Asatai95!"
