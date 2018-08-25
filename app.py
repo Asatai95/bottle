@@ -36,7 +36,7 @@ def send_email():
     gmail.login(from_email, from_password)
     gmail.send_message(msg)
 
-
+    return msg, 
 
 @route("/static/:path#.+#", name='static')
 def test(path):
