@@ -7,7 +7,7 @@ import os
 import stripe
 import sys
 
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(30000)
 
 stripe_keys = {
   'secret_key': os.environ['SECRET_KEY'],
@@ -42,7 +42,7 @@ def sendmail(to_addr_list, subject, message):
                 '',
                 message
                 ])
-    sys.setrecursionlimit(10000)
+    sys.setrecursionlimit(30000)
 
     try:
         @route('/email')
