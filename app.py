@@ -58,7 +58,7 @@ def test_sub():
 
     return template("top", amount=amount)
 
-@route('email')
+@route('/email')
 @view('top')
 def sendmail(to_addr_list, subject, message):
 
