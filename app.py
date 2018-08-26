@@ -24,6 +24,10 @@ def sendNotification():
 
 def sendmail(to_addr_list, subject, message):
 
+    subject = "TEST"
+    message = 'TESTだよ'
+    recepients_list = "defense433@gmail.com"
+    sendmail(recepients_list, subject, message)
     username = "defense433@gmail.com"
     from_addr="defense433@gmail.com"
     password="Asatai95!"
