@@ -66,10 +66,11 @@ def sendmail(to_addr_list, subject, message):
     message = 'TESTだよ'
     recepients_list = "defense433@gmail.com"
     sendmail(recepients_list, subject, message)
+
     username = "defense433@gmail.com"
     from_addr="defense433@gmail.com"
     password="Asatai95!"
-    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server = smtplib.SMTP("https://app-py-heroku.herokuapp.com/email", 587)
     server.ehlo()
     server.starttls()
     server.login(username, password)
