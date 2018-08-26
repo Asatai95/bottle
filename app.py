@@ -85,11 +85,12 @@ def sendmail(to_addr_list, subject, message):
     try:
         server.sendmail(from_addr, to_addr_lost, newmessage)
         print('test')
+        sendNotification()
     except:
         print('error')
     server.quit()
 
-sendNotification()
+# sendNotification()
 
 # @route("/test")
 # @view("test")
