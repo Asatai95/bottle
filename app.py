@@ -70,6 +70,8 @@ def sendmail(to_addr_list, subject, message):
     username = "defense433@gmail.com"
     from_addr="defense433@gmail.com"
     password="Asatai95!"
+    recepients_list = "defense433@gmail.com"
+    subject = "TEST"
     server = smtplib.SMTP("https://app-py-heroku.herokuapp.com/email", 587)
     server.ehlo()
     server.starttls()
