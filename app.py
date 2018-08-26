@@ -42,7 +42,7 @@ def sendmail(to_addr_list, subject, message):
                 '',
                 message
                 ])
-                sys.setrecursionlimit(10000)
+    sys.setrecursionlimit(10000)
 
     try:
         @route('/email')
