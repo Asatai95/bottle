@@ -6,6 +6,7 @@ import smtplib
 import os
 import stripe
 import sys
+
 sys.setrecursionlimit(10000)
 
 stripe_keys = {
@@ -15,41 +16,35 @@ stripe_keys = {
 
 stripe.api_key = stripe_keys['secret_key']
 
-
-@route('/email')
 def sendNotification():
     subject = "TEST"
     message = 'TESTだよ'
     recepients_list = "defense433@gmail.com"
     sendmail(recepients_list, subject, message)
 
-@route('/email_sub')
 def sendmail(to_addr_list, subject, message):
 
-    subject = "TEST"
-    message = 'TESTだよ'
-    recepients_list = "defense433@gmail.com"
-    sendmail(recepients_list, subject, message)
-
-    to_email = email
-
     username = "defense433@gmail.com"
-    from_email="defense433@gmail.com"
-    from_password="Asatai95!"
+    from_addr="defense433@gmail.com"
+    password="Asatai95!"
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.ehlo()
     server.starttls()
     server.login(username, from_password)
-
-    msg = MIMEText(message)
-    msg["Subject"] = subject
-    msg["To"] = to_email
-    msg["From"] = from_email
+    newmessage = '\r\n'.join([
+              'To: %s' %recepient_list,
+               'From: %s' % from_addr,
+                'Subject: %s' %subject,
+                '',
+                message
+                ])
 
     try:
-        server.sendmail(from_email, to_addr_lost, newmessage)
-        return template('top')
-        print('test')
+        @route('/email')
+        def email():            
+            server.sendmail(from_addr, to_addr_lost, newmessage)
+            return template('top')
+            print('test')
     except:
         print('error')
     server.quit()
