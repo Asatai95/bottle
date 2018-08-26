@@ -30,7 +30,7 @@ def sendmail(to_addr_list, subject, message):
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.ehlo()
     server.starttls()
-    server.login(username, from_password)
+    server.login(username, password)
     newmessage = '\r\n'.join([
               'To: %s' %recepient_list,
                'From: %s' % from_addr,
@@ -41,7 +41,7 @@ def sendmail(to_addr_list, subject, message):
 
     try:
         @route('/email')
-        def email():            
+        def email():
             server.sendmail(from_addr, to_addr_lost, newmessage)
             return template('top')
             print('test')
