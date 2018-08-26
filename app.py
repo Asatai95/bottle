@@ -65,7 +65,7 @@ def sendmail(to_addr_list, subject, message):
     subject = "TEST"
     message = 'TESTだよ'
     recepients_list = "defense433@gmail.com"
-    sendmail(recepients_list, subject, message)
+    sendmail( subject, message, recepients_list)
 
     username = "defense433@gmail.com"
     from_addr="defense433@gmail.com"
@@ -84,7 +84,7 @@ def sendmail(to_addr_list, subject, message):
     sys.setrecursionlimit(30000)
 
     try:
-        server.sendmail(from_addr, password, message)
+        server.sendmail(from_addr, password)
         print('test')
         sendNotification()
     except:
