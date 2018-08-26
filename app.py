@@ -58,13 +58,8 @@ def test_sub():
 
     return template("top", amount=amount)
 
-
-def sendNotification():
-    subject = "TEST"
-    message = 'TESTだよ'
-    recepients_list = "defense433@gmail.com"
-    sendmail(recepients_list, subject, message)
-
+@route('email')
+@view('top')
 def sendmail(to_addr_list, subject, message):
 
     subject = "TEST"
@@ -88,11 +83,8 @@ def sendmail(to_addr_list, subject, message):
     sys.setrecursionlimit(30000)
 
     try:
-        @route('/email')
-        def email():
-            server.sendmail(from_addr, to_addr_lost, newmessage)
-            return template('top')
-            print('test')
+        server.sendmail(from_addr, to_addr_lost, newmessage)
+        print('test')
     except:
         print('error')
     server.quit()
