@@ -16,45 +16,7 @@ stripe_keys = {
 
 stripe.api_key = stripe_keys['secret_key']
 
-def sendNotification():
-    subject = "TEST"
-    message = 'TESTだよ'
-    recepients_list = "defense433@gmail.com"
-    sendmail(recepients_list, subject, message)
 
-def sendmail(to_addr_list, subject, message):
-
-    subject = "TEST"
-    message = 'TESTだよ'
-    recepients_list = "defense433@gmail.com"
-    sendmail(recepients_list, subject, message)
-    username = "defense433@gmail.com"
-    from_addr="defense433@gmail.com"
-    password="Asatai95!"
-    server = smtplib.SMTP("smtp.gmail.com", 587)
-    server.ehlo()
-    server.starttls()
-    server.login(username, password)
-    newmessage = '\r\n'.join([
-              'To: %s' %recepient_list,
-               'From: %s' % from_addr,
-                'Subject: %s' %subject,
-                '',
-                message
-                ])
-    sys.setrecursionlimit(30000)
-
-    try:
-        @route('/email')
-        def email():
-            server.sendmail(from_addr, to_addr_lost, newmessage)
-            return template('top')
-            print('test')
-    except:
-        print('error')
-    server.quit()
-
-sendNotification()
 
 @route("/static/:path#.+#", name='static')
 def test(path):
@@ -95,6 +57,47 @@ def test_sub():
     )
 
     return template("top", amount=amount)
+
+
+def sendNotification():
+    subject = "TEST"
+    message = 'TESTだよ'
+    recepients_list = "defense433@gmail.com"
+    sendmail(recepients_list, subject, message)
+
+def sendmail(to_addr_list, subject, message):
+
+    subject = "TEST"
+    message = 'TESTだよ'
+    recepients_list = "defense433@gmail.com"
+    sendmail(recepients_list, subject, message)
+    username = "defense433@gmail.com"
+    from_addr="defense433@gmail.com"
+    password="Asatai95!"
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.ehlo()
+    server.starttls()
+    server.login(username, password)
+    newmessage = '\r\n'.join([
+              'To: %s' %recepient_list,
+               'From: %s' % from_addr,
+                'Subject: %s' %subject,
+                '',
+                message
+                ])
+    sys.setrecursionlimit(30000)
+
+    try:
+        @route('/email')
+        def email():
+            server.sendmail(from_addr, to_addr_lost, newmessage)
+            return template('top')
+            print('test')
+    except:
+        print('error')
+    server.quit()
+
+sendNotification()
 
 # @route("/test")
 # @view("test")
