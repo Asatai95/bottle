@@ -82,11 +82,11 @@ def sendmail():
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
-        server.login(gmail_user, gmail_password)
+        server.login(gmail_usr, gmail_password)
         server.sendmail(sent_form, to, email_text)
         server.quit()
         print('Email')
-        return server 
+        return server
     else:
         print ('Something went wrong...')
 
