@@ -117,6 +117,7 @@ def sendmail():
         msg.attach(msg_sub)
         msg.attach(msg_sub_1)
 
+        msg = msg.encode('ascii', 'replace')
 
 
         server.sendmail(gmail_usr, to, msg.as_string())
