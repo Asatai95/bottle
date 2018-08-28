@@ -20,8 +20,9 @@
 </head>
 <body>
   <div class='test'>
-    <p class='test_sub'>TEST</p>
-    <h2>Thanks, you payed <strong>¥500</strong>!</h2>
+    <p class='test_sub'>{{message}}</p>
+    <p class='test_sub'>{{error}}</p>
+
   </div>
 </body>
 
