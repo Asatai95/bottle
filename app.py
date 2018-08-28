@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf_8 -*-
 import MySQLdb
 from bottle import route, run, template, static_file, request, redirect, response, view
 from email.mime.text import MIMEText
