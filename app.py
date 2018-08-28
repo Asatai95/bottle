@@ -90,17 +90,7 @@ def sendmail():
     print('test4')
 
 
-    email_text = """\
-    FROM: %s
-    To: %s
-    Subject: %s
-
-    %s
-    """ % (From, ", ".join(to), subject, msg_sub )
-    print('test5')
-
-
-    if email_text is not False:
+    if msg_sub is not False:
         print('test6')
         server = smtplib.SMTP('smtp.gmail.com', 587)
         print('test7')
@@ -112,7 +102,7 @@ def sendmail():
         print('test10')
 
         msg.attach(msg_sub)
-        server.sendmail(email_text, msg.as_string())
+        server.sendmail(gmail_usr, to, msg.as_string())
         msg.encode("ascii", errors="ignore")
 
         print('test10')
