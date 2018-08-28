@@ -71,7 +71,9 @@ def sendmail():
     sent_form = 'Taishi Asato'
     to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
     subject = 'TEST'
-    body = "Hey, 元気しとる！! - You"
+    # body = "Hey, 元気しとる！! - You"
+    body = '?iso-2022-jp?b?SGV5LCAbJEI4NTUkJDckSCRrISobKEIhIC0gWW91?='
+
     body_sub = Header(body.encode('iso-2022-jp'), 'iso-2022-jp')
     email_text = """\
     FROM: %s
@@ -79,7 +81,7 @@ def sendmail():
     Subject: %s
 
     %s
-    """ % (sent_form.encode("utf-8"), ", ".join(to).encode("utf-8"), subject.encode("utf-8"), body_sub.encode('iso-2022-jp') )
+    """ % (sent_form.encode("utf_8"), ", ".join(to).encode("utf_8"), subject.encode("utf-8"), body_sub.encode('iso-2022-jp') )
 
     if email_text is not False:
         server = smtplib.SMTP('smtp.gmail.com', 587)
