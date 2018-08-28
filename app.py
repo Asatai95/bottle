@@ -5,7 +5,7 @@ from bottle import route, run, template, static_file, request, redirect, respons
 from email.header import Header
 from email.mime.text import MIMEText
 from email import message
-import email
+import email, base64
 import smtplib
 import os
 import stripe
@@ -72,14 +72,16 @@ def sendmail():
     to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
     subject = 'TEST'
     body = "Hey, 元気しとる！! - You"
-    body_sub = MIMEText(body.encode('iso-2022-jp'), 'plain', 'iso-2022-jp')
+    body = base64.urlsafe_b64decode(text)
+    body = str(body, 'utf-8')
+    body = email.message_from_string(body)
     email_text = """\
     FROM: %s
     To: %s
     Subject: %s
 
     %s
-    """ % (sent_form.encode("utf_8"), ", ".join(to).encode("utf_8"), subject.encode("utf-8"), body_sub.encode('iso-2022-jp') )
+    """ % (sent_form.encode("utf_8"), ", ".join(to).encode("utf_8"), subject.encode("utf-8"), body )
 
     if email_text is not False:
         server = smtplib.SMTP('smtp.gmail.com', 587)
