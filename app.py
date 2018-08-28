@@ -17,6 +17,7 @@ charset.add_charset('utf-8', charset.SHORTEST, None, 'utf-8')
 cset = 'utf-8'
 sys.setrecursionlimit(30000)
 
+
 stripe_keys = {
   'secret_key': os.environ['SECRET_KEY'],
   'publishable_key': os.environ['PUBLISHABLE_KEY']
@@ -102,6 +103,8 @@ def sendmail():
         server.login(gmail_usr, gmail_password)
         print('test10')
         server.sendmail(sent_form, subject, email_text)
+        msg.encode("ascii", errors="ignore")
+
         print('test10')
         server.close()
         print('Email')
