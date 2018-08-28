@@ -79,7 +79,7 @@ def sendmail():
     Subject: %s
 
     %s
-    """ % (sent_form, ", ".join(to), subject, body_sub.encode("utf-8") )
+    """ % (sent_form.encode("utf-8"), ", ".join(to).encode("utf-8"), subject.encode("utf-8"), body_sub.encode('iso-2022-jp') )
 
     if email_text is not False:
         server = smtplib.SMTP('smtp.gmail.com', 587)
