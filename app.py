@@ -101,7 +101,7 @@ def sendmail():
         print('test9')
         server.login(gmail_usr, gmail_password)
         print('test10')
-        server.sendmail(to_addrs, msg, email_text)
+        server.sendmail(sent_form, subject, email_text)
         print('test10')
         server.close()
         print('Email')
