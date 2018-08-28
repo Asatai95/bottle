@@ -74,8 +74,8 @@ def sendmail():
 
     sent_form = 'Taishi Asato'
     to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
-    subject = Header(u'メール送信テスト', cset)
-    body = MIMEText(u"Hey, thank you!! テスト - You", 'plain', cset)
+    subject = Header(u"メール送信テスト", cset)
+    body = MIMEText(u"テスト", "plain", cset)
 
 
     email_text = """\
