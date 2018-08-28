@@ -75,7 +75,7 @@ def sendmail():
     gmail_password = 'Asatai95!'
 
 
-    
+    msg = MIMEMultipart('alternative')
     msg['From'] = gmail_usr
     From = msg['From']
 
