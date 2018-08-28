@@ -20,8 +20,8 @@
 </head>
 <body>
   <div class='test'>
-  
-    <p class='test_sub'>TEST</p>
+
+    <p class='test_sub'>{{message}}</p>
 
   </div>
 </body>
