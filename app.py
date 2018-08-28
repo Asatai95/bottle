@@ -60,60 +60,32 @@ def test_sub():
 
 @route('/email')
 @view('top')
-def sendmail(subject, message, recepients_list):
+def sendmail():
 
-    subject = "TEST"
-    message = 'TESTだよ'
-    recepients_list = "defense433@gmail.com"
-    sendmail( subject, message, recepients_list)
+    gmail_usr = 'defense433@gmail.com'
+    gmail_password = 'Asatai95!'
 
-    username = "defense433@gmail.com"
-    from_addr="defense433@gmail.com"
-    password="Asatai95!"
-    recepients_list = "defense433@gmail.com"
-    subject = "TEST"
-    server = smtplib.SMTP("https://app-py-heroku.herokuapp.com/email", 587)
-    server.ehlo()
-    server.starttls()
-    server.login(username, password)
-    newmessage = '\r\n'.join([
-              'To: %s' %recepient_list,
-               'From: %s' % from_addr,
-                'Subject: %s' %subject,
-                '',
-                message
-                ])
-    sys.setrecursionlimit(30000)
+    sent_form = Taishi Asato
+    to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
+    subject = 'TEST'
+    body = "Hey, whats up? \n\n- You"
+    email_text = """\
+    FROM: %s
+    To: %s
+    Subject: %s
 
-    server.sendmail(from_addr, password)
-    print('test')
-    sendNotification()
+    %s
+    """ % (sent_from, ", ".join(to), subject, body)
 
-    server.quit()
-    sendNotification()
+    try:
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
+        server.login(gmail_user, gmail_password)
+        server.sendmail(sent_from, to, email_text)
+        server.close()
+        print('Email')
+    except:
+        print ('Something went wrong...')
 
-# sendNotification()
-
-# @route("/test")
-# @view("test")
-# def top_db():
-#
-#     db = MySQLdb.connect(db='heroku_d9c662866ce227f', host='us-cdbr-iron-east-01.cleardb.net', port=3306, user='b4da42a09cc349', passwd='dd235253')
-#     con = db.cursor()
-#
-#     sql = 'select id, test from test where id = 1'
-#     test = con.execute(sql)
-#     db.commit()
-#     print(sql)
-#     print(test)
-#
-#     result = con.fetchall()
-#     _int = result[0][0]
-#     sub = result[0][1]
-#     print(result)
-#     print(_int)
-#     print(sub)
-#
-#     return dict(sub = sub, _int = _int)
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
