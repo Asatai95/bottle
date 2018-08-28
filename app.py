@@ -87,11 +87,11 @@ def sendmail():
         server.quit()
         print('Email')
         message = '確かにメッセージを送信しました。'
-        return dict(message=message)
+
     except:
         error = 'エラーが発生しました。'
         print ('Something went wrong...')
-        return dict(error=error)
+        
 
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
