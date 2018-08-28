@@ -60,7 +60,7 @@ def test_sub():
 
 @route('/email')
 @view('top')
-def sendmail(subject, message, recepients_list):
+def sendmail():
 
     subject = "TEST"
     message = 'TESTだよ'
