@@ -86,12 +86,19 @@ def sendmail():
         server.sendmail(sent_form, to, email_text)
         server.quit()
         print('Email')
-        message = '確かにメッセージを送信しました。'
+        if server is not False:
+            message = '確かにメッセージを送信しました。'
+        end
 
     except:
+
         error = 'エラーが発生しました。'
-        print ('Something went wrong...')
-        
+        if error is not False:
+            error = 'エラーが発生しました。'
+            print ('Something went wrong...')
+        end
+
+
 
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
