@@ -4,6 +4,7 @@ import MySQLdb
 from bottle import route, run, template, static_file, request, redirect, response, view
 from email.header import Header
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from email import message
 from email import charset
 import email
@@ -73,7 +74,8 @@ def sendmail():
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
 
-    msg['From'] = 'Taishi Asato'
+    msg = MIMEMultipart('alternative')
+    msg['From'] = gmail_usr
     print('test1')
     msg['To'] = 'you'
     print('test2')
