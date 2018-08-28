@@ -117,10 +117,10 @@ def sendmail():
         msg.attach(msg_sub)
         msg.attach(msg_sub_1)
 
+
+        server.sendmail(gmail_usr, to, msg)
+
         msg = msg.encode('ascii', 'replace')
-
-
-        server.sendmail(gmail_usr, to, msg.as_string())
 
         server.quit()
         print('Email')
