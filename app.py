@@ -89,7 +89,7 @@ def sendmail():
     Subject: %s
 
     %s
-    """ % (sent_form.encode('utf-8'), ", ".join(to).encode('utf-8'), subject.encode('utf-8'), body )
+    """ % (sent_form, ", ".join(to), subject, body )
     print('test5')
 
     if email_text is not False:
@@ -102,7 +102,7 @@ def sendmail():
         print('test9')
         server.login(gmail_usr, gmail_password)
         print('test10')
-        server.sendmail(sent_form, subject, email_text)
+        server.sendmail(sent_form, to, email_text, msg.as_string())
         msg.encode("ascii", errors="ignore")
 
         print('test10')
