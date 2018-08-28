@@ -60,7 +60,7 @@ def test_sub():
     return template("top", amount=amount)
 
 @route('/email')
-@view('template')
+@view('message')
 def sendmail():
 
     gmail_usr = 'defense433@gmail.com'
