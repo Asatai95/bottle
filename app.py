@@ -13,7 +13,8 @@ import os
 import stripe
 import sys
 
-cset = 'utf-8'
+charset.add_charset('utf-8', charset.SHORTEST, None, 'utf-8')
+cset = utf-8
 sys.setrecursionlimit(30000)
 
 stripe_keys = {
