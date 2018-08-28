@@ -88,7 +88,6 @@ def sendmail():
         print('Email')
         if server is not False:
             message = '確かにメッセージを送信しました。'
-            return dict(message=message)
 
     except:
 
@@ -96,10 +95,7 @@ def sendmail():
         if error is not False:
             error = 'エラーが発生しました。'
             print ('Something went wrong...')
-            return dict(error=error)
-
-
-
+            
 
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
