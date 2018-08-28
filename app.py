@@ -73,13 +73,15 @@ def sendmail():
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
 
-    sent_form = 'Taishi Asato'
+    msg['From'] = Taishi Asato
     print('test1')
-    to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
+    msg['To'] = you
     print('test2')
-    subject = "TEST"
+    msg['Subject'] = "TEST"
     print('test3')
-    msg = MIMEText(u"テスト", "plain", cset)
+    text = "テスト"
+    msg_sub = MIMEText(text, "plain", cset)
+
     print('test4')
 
 
@@ -89,8 +91,9 @@ def sendmail():
     Subject: %s
 
     %s
-    """ % (sent_form, ", ".join(to), subject, msg )
+    """ % (sent_form, ", ".join(to), subject, msg_sub )
     print('test5')
+
 
     if email_text is not False:
         print('test6')
@@ -103,11 +106,12 @@ def sendmail():
         server.login(gmail_usr, gmail_password)
         print('test10')
 
+        msg.attach(msg_sub)
         server.sendmail(sent_form, to, email_text, msg.as_string())
         msg.encode("ascii", errors="ignore")
 
         print('test10')
-        server.close()
+        server.quit()
         print('Email')
         if server is not False:
             message = '確かにメッセージを送信しました。'
