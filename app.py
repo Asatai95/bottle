@@ -103,7 +103,7 @@ def sendmail():
         print('test10')
         server.sendmail(sent_form, to, email_text)
         print('test10')
-        server.quit()
+        server.close()
         print('Email')
         if server is not False:
             message = '確かにメッセージを送信しました。'
