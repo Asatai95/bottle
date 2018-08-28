@@ -88,7 +88,7 @@ def sendmail():
     Subject: %s
 
     %s
-    """ % (sent_form, ", ".join(to), subject, body )
+    """ % (sent_form, ", ".join(to), subject.encode('utf-8'), body )
     print('test5')
 
     if email_text is not False:
