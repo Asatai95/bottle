@@ -115,7 +115,7 @@ def sendmail():
         msg.attach(msg_sub)
         msg.attach(msg_sub_1)
 
-        s = smtplib.SMTP('https://app-py-heroku.herokuapp.com/')
+        
 
         s.server.sendmail(gmail_usr, to, msg.as_string())
 
