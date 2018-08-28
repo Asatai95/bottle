@@ -115,11 +115,11 @@ def sendmail():
         msg.attach(msg_sub)
         msg.attach(msg_sub_1)
 
-        
 
-        s.server.sendmail(gmail_usr, to, msg.as_string())
 
-        s.server.quit()
+        server.sendmail(gmail_usr, to, msg.as_string())
+
+        server.quit()
         print('Email')
         if server is not False:
             message = '確かにメッセージを送信しました。'
