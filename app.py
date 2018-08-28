@@ -60,7 +60,6 @@ def test_sub():
     return template("top", amount=amount)
 
 @route('/email')
-@view('message')
 def sendmail():
 
     gmail_usr = 'defense433@gmail.com'
@@ -88,7 +87,7 @@ def sendmail():
         print('Email')
         if server is not False:
             message = '確かにメッセージを送信しました。'
-            return dict(message=message)
+            return template('message' ,message=message)
 
     except:
 
@@ -96,7 +95,7 @@ def sendmail():
         if error is not False:
             error = 'エラーが発生しました。'
             print ('Something went wrong...')
-
+            return template('message', error=error)
 
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
