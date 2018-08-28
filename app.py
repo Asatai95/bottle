@@ -112,7 +112,7 @@ def sendmail():
         print('test10')
 
         msg.attach(msg_sub)
-        server.sendmail(From, to, email_text, msg.as_string())
+        server.sendmail(email_text, msg.as_string())
         msg.encode("ascii", errors="ignore")
 
         print('test10')
