@@ -21,10 +21,10 @@
 <body>
   <div class='test'>
     {% for messages in message %}
-    <p class='test_sub'>{{messages}}</p>
+    <p class='test_sub'>{{messages[0]}}</p>
     {% endfor %}
     {% for errors in error %}
-    <p class='test_sub'>{{errors}}</p>
+    <p class='test_sub'>{{errors[0]}}</p>
     {% endfor %}
 
   </div>
