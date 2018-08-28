@@ -78,7 +78,7 @@ def sendmail():
     """ % (sent_form, ", ".join(to), subject, body)
 
     try:
-        server = smtplib.SMTP('smtp.gmail.com', 465)
+        server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.login(gmail_user, gmail_password)
         server.sendmail(sent_form, to, email_text)
