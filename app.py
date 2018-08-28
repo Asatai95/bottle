@@ -60,7 +60,7 @@ def test_sub():
 
 @route('/email')
 @view('top')
-def sendmail('to_addr_list', 'subject', 'message'):
+def sendmail(to_addr_list, subject, message):
 
     subject = "TEST"
     message = 'TESTだよ'
@@ -85,12 +85,10 @@ def sendmail('to_addr_list', 'subject', 'message'):
                 ])
     sys.setrecursionlimit(30000)
 
-    try:
-        server.sendmail(from_addr, password)
-        print('test')
-        sendNotification()
-    except:
-        print('error')
+    server.sendmail(from_addr, password)
+    print('test')
+    sendNotification()
+
     server.quit()
     sendNotification()
 
