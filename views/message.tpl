@@ -20,10 +20,12 @@
 </head>
 <body>
   <div class='test'>
+    {% if message is not False %}
     <p class='test_sub'>{{message}}</p>
-
+    {% else %}
     <p class='test_sub'>{{error}}</p>
 
+    {% endif %}
 
   </div>
 </body>

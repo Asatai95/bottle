@@ -69,7 +69,7 @@ def sendmail():
     sent_form = 'Taishi Asato'
     to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
     subject = 'TEST'
-    body = "Hey, whats up? \n\n- You"
+    body = "Hey, 元気しとる！！ \n\n- You"
     email_text = """\
     FROM: %s
     To: %s
