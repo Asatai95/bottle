@@ -102,9 +102,9 @@ def sendmail():
         print('test9')
         server.login(gmail_usr, gmail_password)
         print('test10')
-        msg.encode("ascii", errors="ignore")
-        server.sendmail(sent_form, to, email_text, msg.as_string())
 
+        server.sendmail(sent_form, to, email_text, msg.as_string())
+        msg.encode("ascii", errors="ignore")
 
         print('test10')
         server.close()
