@@ -77,7 +77,7 @@ def sendmail():
     %s
     """ % (sent_form, ", ".join(to), subject, body)
 
-    try:
+    if email_text is not False:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
@@ -89,11 +89,11 @@ def sendmail():
             message = '確かにメッセージを送信しました。'
             return template('message' ,message=message)
 
-    except:
+    else:
 
         message = 'エラーが発生しました。'
         if message is not False:
-             message = 'エラーが発生しました。'
+            message = 'エラーが発生しました。'
             print ('Something went wrong...')
             return template('message', message=message)
 
