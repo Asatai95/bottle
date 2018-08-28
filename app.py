@@ -5,6 +5,7 @@ from bottle import route, run, template, static_file, request, redirect, respons
 from email.header import Header
 from email.mime.text import MIMEText
 from email import message
+from email import charset
 import email
 import base64
 import smtplib
@@ -12,6 +13,7 @@ import os
 import stripe
 import sys
 
+cset = 'utf-8'
 sys.setrecursionlimit(30000)
 
 stripe_keys = {
@@ -72,8 +74,8 @@ def sendmail():
     sent_form = 'Taishi Asato'
     to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
     subject = 'TEST'
-    body = "Hey, thank you!! テスト - You"
-    sys.getdefaultencoding("utf-8")
+    body = MIMEText(u"Hey, thank you!! テスト - You", 'plain', cset)
+
 
     email_text = """\
     FROM: %s
