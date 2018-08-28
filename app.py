@@ -88,7 +88,7 @@ def sendmail():
         print('Email')
         if server is not False:
             message = '確かにメッセージを送信しました。'
-        end
+    
 
     except:
 
@@ -96,7 +96,7 @@ def sendmail():
         if error is not False:
             error = 'エラーが発生しました。'
             print ('Something went wrong...')
-        end
+
 
 
 
