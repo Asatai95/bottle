@@ -2,6 +2,7 @@
 <html lang="ja">
 
 <head>
+  <meta http-equiv="Content-Type" content="text/plain"; charset="UTF-8"; Content-Transfer-Encoding="base64" />
   <meta charset="utf-8">
   <meta name='keywords' content=''>
   <meta name='description' content="">
