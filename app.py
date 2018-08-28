@@ -77,36 +77,50 @@ def sendmail():
     msg = MIMEMultipart('alternative')
     msg['From'] = gmail_usr
     From = msg['From']
-    print('test1')
+
     msg['To'] = 'you'
     to = msg['To']
-    print('test2')
+
     msg['Subject'] = "TEST"
     subject = msg['Subject']
-    print('test3')
-    text = "テスト"
-    msg_sub = MIMEText(text, "plain", cset)
 
-    print('test4')
+    text = "テスト"
+    html = """\
+    <html>
+      <head></head>
+      <body>
+        <p>Hi!<br>
+        How are you?<br>
+        Here is the <a href="https://www.python.org">link</a> you wanted.
+     </p>
+     </body>
+   </html>
+   """
+    msg_sub = MIMEText(text, "plain", cset)
+    msg_sub_1 = MIMEText(html, "html", cset)
+
 
 
     if msg_sub is not False:
-        print('test6')
+
         server = smtplib.SMTP('smtp.gmail.com', 587)
-        print('test7')
+
         server.ehlo()
-        print('test8')
+
         server.starttls()
-        print('test9')
+
         server.login(gmail_usr, gmail_password)
-        print('test10')
+
 
         msg.attach(msg_sub)
-        server.sendmail(gmail_usr, to, msg.as_string())
+        msg.attach(msg_sub_1)
+
+        s = smtplib.SMTP('localhost')
+
+        s.server.sendmail(gmail_usr, to, msg.as_string())
         msg.encode("ascii", errors="ignore")
 
-        print('test10')
-        server.quit()
+        s.server.quit()
         print('Email')
         if server is not False:
             message = '確かにメッセージを送信しました。'
