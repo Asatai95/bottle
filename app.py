@@ -86,7 +86,6 @@ def sendmail():
         server.sendmail(sent_form, to, email_text)
         server.quit()
         print('Email')
-        return server
     else:
         print ('Something went wrong...')
 
