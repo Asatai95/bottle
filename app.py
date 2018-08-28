@@ -73,9 +73,9 @@ def sendmail():
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
 
-    msg['From'] = Taishi Asato
+    msg['From'] = 'Taishi Asato'
     print('test1')
-    msg['To'] = you
+    msg['To'] = 'you'
     print('test2')
     msg['Subject'] = "TEST"
     print('test3')
