@@ -2,7 +2,7 @@
 # -*- coding: utf_8 -*-
 import MySQLdb
 from bottle import route, run, template, static_file, request, redirect, response, view
-from email.header import decode_header
+from email.header import Header
 from email.mime.text import MIMEText
 from email import message
 import email
