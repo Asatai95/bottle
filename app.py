@@ -73,8 +73,8 @@ def sendmail():
     to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
     subject = 'TEST'
     body = "Hey, thank you!! - You"
-    ms = email.message_from_string(x[0][1].decode('iso-2022-jp'))
-    body = ms.get_payload()
+
+    body = body.get_payload()
 
 
     email_text = """\
