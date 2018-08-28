@@ -72,7 +72,7 @@ def sendmail():
     sent_form = 'Taishi Asato'
     to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
     subject = 'TEST'
-    body = ("Hey, 元気しとる！! - You", "utf-8")
+    body = "Hey, thank you!! - You"
 
 
     email_text = """\
@@ -81,14 +81,14 @@ def sendmail():
     Subject: %s
 
     %s
-    """ % (sent_form.encode("utf_8"), ", ".join(to).encode("utf_8"), subject.encode("utf-8"), body.encode('ascii') )
+    """ % (sent_form.encode("utf_8"), ", ".join(to).encode("utf_8"), subject.encode("utf-8"), body.encode('utf-8') )
 
     if email_text is not False:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
         server.login(gmail_usr, gmail_password)
-        server.sendmail(sent_form, to, email_text)
+        server.sendmail(sent_form.encode("utf_8"), to.encode("utf_8"), email_text.encode("utf_8"))
         server.quit()
         print('Email')
         if server is not False:
