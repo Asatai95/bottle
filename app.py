@@ -76,7 +76,7 @@ def sendmail():
     print('test1')
     to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
     print('test2')
-    subject = Header(u"メール送信テスト", cset)
+    subject = "TEST"
     print('test3')
     body = MIMEText(u"テスト", "plain", cset)
     print('test4')
