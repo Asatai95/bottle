@@ -73,14 +73,14 @@ def sendmail():
 
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
+    you = 'you@gmail.com'
 
 
     msg = MIMEMultipart()
     msg['From'] = gmail_usr
     From = msg['From']
 
-    msg['To'] = 'you'
-    to = msg['To']
+    msg['To'] = you
 
     msg['Subject'] = "TEST"
     subject = msg['Subject']
@@ -118,7 +118,7 @@ def sendmail():
         msg.attach(msg_sub_1)
 
 
-        server.sendmail(gmail_usr, to, msg)
+        server.sendmail(gmail_usr, you, msg)
 
         msg = msg.encode('ascii', 'replace')
 
