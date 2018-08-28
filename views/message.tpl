@@ -20,7 +20,7 @@
 </head>
 <body>
   <div class='test'>
-    {% if message == message %}
+    {% if message == '確かにメッセージを送信しました。' %}
     <p class='test_sub'>{{message}}</p>
     {% else %}
     <p class='test_sub'>{{error}}</p>

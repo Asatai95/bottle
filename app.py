@@ -91,11 +91,11 @@ def sendmail():
 
     except:
 
-        error = 'エラーが発生しました。'
-        if error is not False:
-            error = 'エラーが発生しました。'
+        message = 'エラーが発生しました。'
+        if message is not False:
+             message = 'エラーが発生しました。'
             print ('Something went wrong...')
-            return template('message', error=error)
+            return template('message', message=message)
 
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
