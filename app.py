@@ -75,7 +75,7 @@ def sendmail():
     gmail_password = 'Asatai95!'
 
 
-    msg = MIMEMultipart('alternative')
+    msg = MIMEMultipart()
     msg['From'] = gmail_usr
     From = msg['From']
 
@@ -104,7 +104,6 @@ def sendmail():
 
     if msg_sub is not False:
 
-        msg.encode('ascii', 'replace')
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
 
