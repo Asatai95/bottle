@@ -79,7 +79,7 @@ def sendmail():
     print('test2')
     subject = "TEST"
     print('test3')
-    body = MIMEText(u"テスト", "plain", cset)
+    msg = MIMEText(u"テスト", "plain", cset)
     print('test4')
 
 
@@ -89,7 +89,7 @@ def sendmail():
     Subject: %s
 
     %s
-    """ % (sent_form, ", ".join(to), subject, body )
+    """ % (sent_form, ", ".join(to), subject, msg )
     print('test5')
 
     if email_text is not False:
@@ -102,8 +102,9 @@ def sendmail():
         print('test9')
         server.login(gmail_usr, gmail_password)
         print('test10')
-        server.sendmail(sent_form, to, email_text, msg.as_string())
         msg.encode("ascii", errors="ignore")
+        server.sendmail(sent_form, to, email_text, msg.as_string())
+
 
         print('test10')
         server.close()
