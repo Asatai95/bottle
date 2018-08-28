@@ -88,7 +88,7 @@ def sendmail():
         server.ehlo()
         server.starttls()
         server.login(gmail_usr, gmail_password)
-        server.sendmail(sent_form.encode("utf_8"), to.encode("utf_8"), email_text.encode("utf_8"))
+        server.sendmail(sent_form, to, email_text)
         server.quit()
         print('Email')
         if server is not False:
