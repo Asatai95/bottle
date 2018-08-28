@@ -20,8 +20,12 @@
 </head>
 <body>
   <div class='test'>
-    <p class='test_sub'>{{message}}</p>
-    <p class='test_sub'>{{error}}</p>
+    {% for messages in message %}
+    <p class='test_sub'>{{messages}}</p>
+    {% endfor %}
+    {% for errors in error %}
+    <p class='test_sub'>{{errors}}</p>
+    {% endfor %}
 
   </div>
 </body>
