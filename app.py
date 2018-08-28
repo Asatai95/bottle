@@ -78,10 +78,10 @@ def sendmail():
     """ % (sent_form, ", ".join(to), subject, body)
 
     try:
-        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server = smtplib.SMTP('smtp.gmail.com', 465)
         server.ehlo()
         server.login(gmail_user, gmail_password)
-        server.sendmail(sent_from, to, email_text)
+        server.sendmail(sent_form, to, email_text)
         server.close()
         print('Email')
     except:
