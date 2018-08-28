@@ -92,11 +92,17 @@ def sendmail():
     print('test5')
 
     if email_text is not False:
+        print('test6')
         server = smtplib.SMTP('smtp.gmail.com', 587)
+        print('test7')
         server.ehlo()
+        print('test8')
         server.starttls()
+        print('test9')
         server.login(gmail_usr, gmail_password)
+        print('test10')
         server.sendmail(sent_form, to, email_text)
+        print('test10')
         server.quit()
         print('Email')
         if server is not False:
