@@ -1,6 +1,7 @@
 import MySQLdb
 from bottle import route, run, template, static_file, request, redirect, response, view
 from email.mime.text import MIMEText
+from email import message
 import email
 import smtplib
 import os
@@ -82,7 +83,7 @@ def sendmail():
         server.ehlo()
         server.login(gmail_user, gmail_password)
         server.sendmail(sent_form, to, email_text)
-        server.close()
+        server.quit()
         print('Email')
     except:
         print ('Something went wrong...')
