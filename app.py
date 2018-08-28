@@ -103,6 +103,8 @@ def sendmail():
 
     if msg_sub is not False:
 
+        msg = msg.encode('ascii', 'replace')
+
         server = smtplib.SMTP('smtp.gmail.com', 587)
 
         server.ehlo()
