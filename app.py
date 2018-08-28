@@ -78,7 +78,7 @@ def sendmail():
     %s
     """ % (sent_form, ", ".join(to), subject, body)
 
-    try:
+    if email_text is not False:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
@@ -87,7 +87,7 @@ def sendmail():
         server.quit()
         print('Email')
         return server 
-    except:
+    else:
         print ('Something went wrong...')
 
 
