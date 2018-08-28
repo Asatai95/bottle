@@ -60,6 +60,7 @@ def test_sub():
     return template("top", amount=amount)
 
 @route('/email')
+@view('template')
 def sendmail():
 
     gmail_usr = 'defense433@gmail.com'
@@ -91,7 +92,7 @@ def sendmail():
 
     else:
 
-        message = 'エラーが発生しました。'
+        # message = 'エラーが発生しました。'
         print('test')
         # if message is not False:
         #     message = 'エラーが発生しました。'
