@@ -5,7 +5,8 @@ from bottle import route, run, template, static_file, request, redirect, respons
 from email.header import Header
 from email.mime.text import MIMEText
 from email import message
-import email, base64
+import email
+import base64
 import smtplib
 import os
 import stripe
