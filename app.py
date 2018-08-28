@@ -1,3 +1,4 @@
+# coding: utf-8
 import MySQLdb
 from bottle import route, run, template, static_file, request, redirect, response, view
 from email.mime.text import MIMEText
@@ -76,7 +77,7 @@ def sendmail():
     Subject: %s
 
     %s
-    """ % (sent_form, ", ".join(to).encode('utf_8'), subject.encode('utf_8'), body_sub.encode('utf_8') )
+    """ % (sent_form, ", ".join(to).encode('utf_8'), subject.encode('utf_8'), body_sub.unicode('utf_8') )
 
     if email_text is not False:
         server = smtplib.SMTP('smtp.gmail.com', 587)
