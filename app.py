@@ -65,7 +65,7 @@ def sendmail():
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
 
-    sent_form = Taishi Asato
+    sent_form = gmail_user 
     to = ['defense433@gmail.com' ,'https://app-py-heroku.herokuapp.com']
     subject = 'TEST'
     body = "Hey, whats up? \n\n- You"
