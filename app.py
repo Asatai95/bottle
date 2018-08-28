@@ -85,17 +85,18 @@ def sendmail():
         server.sendmail(sent_form, to, email_text)
         server.quit()
         print('Email')
-        if server is not False:
-            message = '確かにメッセージを送信しました。'
-            return template('message' ,message=message)
+        # if server is not False:
+        #     message = '確かにメッセージを送信しました。'
+        #     return template('message' ,message=message)
 
     else:
 
         message = 'エラーが発生しました。'
-        if message is not False:
-            message = 'エラーが発生しました。'
-            print ('Something went wrong...')
-            return template('message', message=message)
+        print('test')
+        # if message is not False:
+        #     message = 'エラーが発生しました。'
+        #     print ('Something went wrong...')
+        #     return template('message', message=message)
 
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
