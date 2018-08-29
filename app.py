@@ -71,9 +71,9 @@ def test_sub():
 @route('/email')
 def sendmail():
 
-    gmail_usr = 'defense433@gmail.com'
+    gmail_usr = str('defense433@gmail.com')
     gmail_password = 'Asatai95!'
-    you = 'you@gmail.com'
+    you = str('you@gmail.com')
 
 
     msg = MIMEMultipart()
