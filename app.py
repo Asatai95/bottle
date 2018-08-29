@@ -83,21 +83,9 @@ def sendmail():
     msg['Subject'] = "TEST"
 
     text = "テスト"
-    html = """\
-    <html>
-      <head></head>
-      <body>
-        <p>Hi!<br>
-        How are you?<br>
-        Here is the <a href="https://www.python.org">link</a> you wanted.
-     </p>
-     </body>
-   </html>
-   """
+
     msg_sub = MIMEText(text, "plain", cset)
-    msg_sub_1 = MIMEText(html, "html", cset)
-
-
+    
 
     if msg_sub is not False:
 
@@ -112,7 +100,6 @@ def sendmail():
 
 
         msg.attach(msg_sub)
-        msg.attach(msg_sub_1)
 
 
         server.sendmail(gmail_usr, you, msg)
