@@ -74,10 +74,10 @@ def sendmail():
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
     you = 'you@gmail.com'
-    
-    msg['From'] = str(gmail_usr)
 
-    msg['To'] = str(you)
+    msg['From'] = gmail_usr
+
+    msg['To'] = you
 
     msg['Subject'] = "TEST"
 
@@ -94,6 +94,8 @@ def sendmail():
         server.ehlo()
 
         server.starttls()
+        
+        server.ehlo()
 
         server.login(gmail_usr, gmail_password)
 
