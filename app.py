@@ -74,8 +74,7 @@ def sendmail():
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
     you = 'you@gmail.com'
-
-    msg = MIMEMultipart('alternative')
+    
     msg['From'] = str(gmail_usr)
 
     msg['To'] = str(you)
@@ -85,7 +84,7 @@ def sendmail():
     text = "テスト"
 
     msg_sub = MIMEText(text, "plain", cset)
-    
+
 
     if msg_sub is not False:
 
