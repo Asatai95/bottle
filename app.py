@@ -71,19 +71,16 @@ def test_sub():
 @route('/email')
 def sendmail():
 
-    gmail_usr = str('defense433@gmail.com')
+    gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
-    you = str('you@gmail.com')
-
+    you = 'you@gmail.com'
 
     msg = MIMEMultipart()
     msg['From'] = gmail_usr
-    From = msg['From']
-
+    
     msg['To'] = you
 
     msg['Subject'] = "TEST"
-    subject = msg['Subject']
 
     text = "テスト"
     html = """\
