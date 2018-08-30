@@ -69,6 +69,7 @@ def test_sub():
     return template("top", amount=amount)
 
 @route('/email')
+@view('template')
 def sendmail():
 
     gmail_usr = 'defense433@gmail.com'
@@ -76,7 +77,7 @@ def sendmail():
     you = 'you@gmail.com'
 
     msg = MIMEMultipart()
-    
+
     msg['From'] = gmail_usr
 
     msg['To'] = you
@@ -111,9 +112,9 @@ def sendmail():
 
         server.quit()
         print('Email')
-        if server is not False:
-            message = '確かにメッセージを送信しました。'
-            return template('message' ,message=message)
+        # if server is not False:
+        #     message = '確かにメッセージを送信しました。'
+        #     return template('message' ,message=message)
 
     else:
 
