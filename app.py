@@ -78,12 +78,22 @@ def sendmail():
     msg = MIMEMultipart()
 
     msg['From'] = gmail_usr
+    From = msg['From']
 
     msg['To'] = you
+    to = msg['To']
 
     msg['Subject'] = "TEST"
+    subject = msg['Subject']
 
     text = "テスト"
+    email_text = """\
+        FROM: %s
+        To: %s
+        Subject: %s
+
+        %s
+        """ % (From, ", ".join(to), subject, text )
 
     msg_sub = MIMEText(text, "plain", cset)
 
@@ -106,7 +116,7 @@ def sendmail():
         msg.attach(msg_sub)
 
 
-        server.sendmail(gmail_usr, you, msg)
+        server.sendmail(gmail_usr, you, email_text.as_string())
 
 
 
