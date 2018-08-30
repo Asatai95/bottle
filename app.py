@@ -85,7 +85,7 @@ def sendmail():
 
     text = "テスト"
 
-    msg_sub = MIMEText(text, "plain")
+    msg_sub = MIMEText(text, "plain", cset)
 
 
     if msg_sub is not False:
@@ -105,7 +105,7 @@ def sendmail():
         msg.attach(msg_sub)
 
 
-        server.sendmail(gmail_usr, you, msg)
+        server.sendmail(gmail_usr, you, msg.as_string())
 
         msg = msg.encode('ascii', 'replace')
 
