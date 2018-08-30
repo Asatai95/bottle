@@ -90,7 +90,7 @@ def sendmail():
 
     if msg_sub is not False:
 
-        msg = msg.encode('ascii')
+        # msg = msg.encode('ascii')
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
 
