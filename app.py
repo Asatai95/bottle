@@ -107,7 +107,7 @@ def sendmail():
 
         server.sendmail(gmail_usr, you, msg.as_string())
 
-        msg = msg.encode('utf-8', 'replace')
+        msg = msg.encode('ascii')
 
         server.quit()
         print('Email')
