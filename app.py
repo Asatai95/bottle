@@ -87,6 +87,7 @@ def sendmail():
     subject = msg['Subject']
 
     text = "テスト"
+    text = text.encode('ascii')
     email_text = """\
         FROM: %s
         To: %s
@@ -116,7 +117,7 @@ def sendmail():
         msg.attach(msg_sub)
 
 
-        server.sendmail(gmail_usr, you, email_text.as_string())
+        server.sendmail(gmail_usr, you, email_text)
 
 
 
