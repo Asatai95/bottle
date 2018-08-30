@@ -90,6 +90,7 @@ def sendmail():
 
     if msg_sub is not False:
 
+        msg = msg.encode('ascii')
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
 
@@ -107,7 +108,7 @@ def sendmail():
 
         server.sendmail(gmail_usr, you, msg.as_string())
 
-        msg = msg.encode('utf_8')
+
 
         server.quit()
         print('Email')
