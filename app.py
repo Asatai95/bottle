@@ -87,7 +87,7 @@ def sendmail():
     subject = msg['Subject']
 
     text = "テスト"
-    text = text.encode('ascii')
+    # text = text.encode('ascii')
     email_text = """\
         FROM: %s
         To: %s
