@@ -86,7 +86,7 @@ def sendmail():
     msg['Subject'] = "TEST"
     subject = msg['Subject']
 
-    text = "テスト"
+    text = "test"
     text_sub = text.encode("ascii", errors="ignore")
     email_text = """\
         FROM: %s
@@ -94,7 +94,7 @@ def sendmail():
         Subject: %s
 
         %s
-        """ % (From, to, subject, text_sub )
+        """ % (From, ", ".join(to), subject, text_sub )
 
     msg_sub = MIMEText(text, "plain", cset)
 
