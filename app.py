@@ -80,7 +80,7 @@ def sendmail():
     msg['From'] = you
     From = msg['From']
 
-    msg['To'] = gmail_usr
+    msg['To'] = [gmail_usr, you]
     to = msg['To']
 
     msg['Subject'] = "TEST"
@@ -94,7 +94,7 @@ def sendmail():
         Subject: %s
 
         %s
-        """ % (From, to, subject, text_sub )
+        """ % (From, ",".join(to), subject, text_sub )
 
     msg_sub = MIMEText(text, "plain", cset)
 
