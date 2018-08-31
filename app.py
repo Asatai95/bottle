@@ -94,7 +94,7 @@ def sendmail():
         Subject: %s
 
         %s
-        """ % (From, ", ".join(to), subject, text_sub )
+        """ % (From, to, subject, text_sub )
 
     msg_sub = MIMEText(text, "plain", cset)
 
