@@ -74,58 +74,45 @@ def sendmail():
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
     you = 'asatai918@gmail.com'
+    jp_encoding = 'iso-2022-jp'
+    mail_subject = 'test'
+    text_sub = text.encode("iso-2022-jp", errors="ignore")
+    body = '/text.txt'
 
-    msg = MIMEMultipart()
+    with open(body, 'r', encoding='utf-8') as file:
+        body = file.read()
 
-    msg['From'] = you
-    From = msg['From']
+    server = smtplib.SMTP('smtp.gmail.com', 587)
 
-    msg['To'] = [gmail_usr, you]
-    to = msg['To']
+    server.ehlo()
 
-    msg['Subject'] = "TEST"
-    subject = msg['Subject']
+    server.starttls()
 
-    text = "test"
-    text_sub = text.encode("ascii", errors="ignore")
-    email_text = """\
-        FROM: %s
-        To: %s
-        Subject: %s
+    server.ehlo()
 
-        %s
-        """ % (From, ",".join(to), subject, text_sub )
-
-    msg_sub = MIMEText(text, "plain", cset)
+    server.login(gmail_usr, gmail_password)
 
 
     if msg_sub is not False:
 
-        # msg = msg.encode('ascii')
+        msg = MIMEText(body.encode(jp_encoding), "plain", jp_encoding)
 
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-
-        server.ehlo()
-
-        server.starttls()
-
-        server.ehlo()
-
-        server.login(gmail_usr, gmail_password)
-
+        msg['From'] = gmail_usr
+        msg['Subject'] = Header(mail_subject, jp_encoding)
+        msg['Bcc'] = you
+        msg['To'] = you
 
         msg.attach(msg_sub)
 
-
-        server.sendmail(you, gmail_usr, email_text)
-
+        server.sendmail(msg)
 
 
-        server.quit()
         print('Email')
         if server is not False:
             message = '確かにメッセージを送信しました。'
             return template('message' ,message=message)
+
+        server.close()
 
     else:
 

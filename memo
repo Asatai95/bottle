@@ -7,3 +7,15 @@ email_text = """\
     """ % (From, ", ".join(to), subject, msg_sub )
     print('test5')
 
+    msg = MIMEMultipart()
+
+      msg['From'] = you
+      From = msg['From']
+
+      msg['To'] = gmail_usr
+      to = msg['To']
+
+      msg['Subject'] = Header(mail_subject, jp_encoding)
+      subject = msg['Subject']
+
+      text = "test"
