@@ -117,7 +117,7 @@ def sendmail():
         msg.attach(msg_sub)
 
 
-        server.sendmail(gmail_usr, you, email_text)
+        server.sendmail(you, gmail_usr, email_text)
 
 
 
