@@ -76,7 +76,6 @@ def sendmail():
     you = 'asatai918@gmail.com'
     jp_encoding = 'iso-2022-jp'
     mail_subject = 'test'
-    text_sub = text.encode("iso-2022-jp", errors="ignore")
     body = '/text.txt'
 
     with open(body, 'r', encoding='utf-8') as file:
