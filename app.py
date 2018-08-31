@@ -73,7 +73,7 @@ def sendmail():
 
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
-    you = 'you@gmail.com'
+    you = 'asatai918@gmail.com'
 
     msg = MIMEMultipart()
 
