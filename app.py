@@ -77,7 +77,7 @@ def sendmail():
     jp_encoding = 'iso-2022-jp'
     mail_subject = '〇〇商品について'
     body = 'text.txt'
-    sender_name = u"〇〇株式会社"
+    sender_name = u"OkiDoki株式会社"
 
     with open(body, 'r', encoding='utf-8') as file:
         body = file.read()
