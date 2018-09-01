@@ -49,7 +49,6 @@ def test_view():
     return dict(key=stripe_keys['publishable_key'])
 
 @route("/test", method='POST')
-@view("test")
 def test_sub():
 
     amount = '500'
