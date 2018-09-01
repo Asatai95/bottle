@@ -75,7 +75,7 @@ def sendmail():
     gmail_password = 'Asatai95!'
     you = 'asatai918@gmail.com'
     jp_encoding = 'iso-2022-jp'
-    mail_subject = 'test'
+    mail_subject = '〇〇商品について'
     body = 'text.txt'
 
     with open(body, 'r', encoding='utf-8') as file:
@@ -99,7 +99,7 @@ def sendmail():
         msg['From'] = you
         From = msg['From']
         msg['Subject'] = Header(mail_subject, jp_encoding)
-        msg['To'] = gmail_usr
+        msg['To'] = you
         to = msg['To']
 
         server.sendmail(From, to, msg.as_string())
