@@ -101,8 +101,6 @@ def sendmail():
         msg['Bcc'] = you
         msg['To'] = you
 
-        msg.attach(msg)
-
         server.sendmail(msg)
 
 
