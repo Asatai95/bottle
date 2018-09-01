@@ -125,6 +125,8 @@ def test_sub():
 @route('/text')
 def text():
 
+    message = '確かに支払いは完了しました。'
+    
     return template('message', message=message)
 
 # @route('/email')
