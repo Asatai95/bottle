@@ -125,7 +125,7 @@ def test_sub():
 @route('/text')
 def text():
 
-    return template('message')
+    return template('message', message=message)
 
 # @route('/email')
 # def sendmail():
