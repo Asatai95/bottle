@@ -15,6 +15,14 @@ fb:login-button {
   border: 1px solid black;
 }
 
+.fb_iframe_widget  {
+  padding: 30px;
+}
+
+.fb_iframe_widget iframe {
+  position: relative;
+}
+
 form article label {
   display: block;
   margin: 5px;
