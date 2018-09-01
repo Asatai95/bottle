@@ -53,24 +53,21 @@ def test_sub():
 
     amount = '500'
 
-    customer = stripe.Customer.create(
-        source=request.forms['stripeToken']
-    )
+    stripe_token = form['stripeToken'].value
+    mail_address = form['stripeEmail'].value
 
-    gmail = stripe.Customer.create(
-        email='asatai918@gmail.com'
-    )
+    stripe.api_key = stripe_keys['publishable_key']
 
-    charge = stripe.Charge.create(
-        customer=customer.id,
+    stripe.Charge.create(
         amount=amount,
-        currency='usd',
-        description='Bottle Charge'
+        currency="jpy",
+        description="Charge for {mail}".format(mail=mail_address),
+        source=stripe_token
     )
 
     gmail_usr = 'defense433@gmail.com'
     gmail_password = 'Asatai95!'
-    you = gmail
+    you = mail_address
     jp_encoding = 'iso-2022-jp'
     mail_subject = '〇〇商品について'
     body = 'text.txt'
