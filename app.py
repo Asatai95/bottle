@@ -92,7 +92,7 @@ def sendmail():
     server.login(gmail_usr, gmail_password)
 
 
-    if msg_sub is not False:
+    if server is not False:
 
         msg = MIMEText(body.encode(jp_encoding), "plain", jp_encoding)
 
