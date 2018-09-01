@@ -122,55 +122,60 @@ def test_sub():
 
         return template("top", amount=amount)
 
-@route('/email')
-def sendmail():
+@route('/text')
+def text():
 
-    gmail_usr = 'defense433@gmail.com'
-    gmail_password = 'Asatai95!'
-    you = 'asatai918@gmail.com'
-    jp_encoding = 'iso-2022-jp'
-    mail_subject = '〇〇商品について'
-    body = 'text.txt'
-    sender_name = u"OkiDoki株式会社"
+    return template('message')
 
-    with open(body, 'r', encoding='utf-8') as file:
-        body = file.read()
-
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-
-    server.ehlo()
-
-    server.starttls()
-
-    server.ehlo()
-
-    server.login(gmail_usr, gmail_password)
-
-
-    if server is not False:
-
-        msg = MIMEText(body.encode(jp_encoding), "plain", jp_encoding)
-
-        from_jp = Header(sender_name, jp_encoding)
-        msg['From'] = from_jp
-        From = gmail_usr
-        msg['Subject'] = Header(mail_subject, jp_encoding)
-        msg['To'] = you
-        to = msg['To']
-
-        server.sendmail(From, to, msg.as_string())
-
-
-        print('Email')
-        if server is not False:
-            message = '確かにメッセージを送信しました。'
-            return template('message' ,message=message)
-
-        server.close()
-
-    else:
-
-        print('test')
+# @route('/email')
+# def sendmail():
+#
+#     gmail_usr = 'defense433@gmail.com'
+#     gmail_password = 'Asatai95!'
+#     you = 'asatai918@gmail.com'
+#     jp_encoding = 'iso-2022-jp'
+#     mail_subject = '〇〇商品について'
+#     body = 'text.txt'
+#     sender_name = u"OkiDoki株式会社"
+#
+#     with open(body, 'r', encoding='utf-8') as file:
+#         body = file.read()
+#
+#     server = smtplib.SMTP('smtp.gmail.com', 587)
+#
+#     server.ehlo()
+#
+#     server.starttls()
+#
+#     server.ehlo()
+#
+#     server.login(gmail_usr, gmail_password)
+#
+#
+#     if server is not False:
+#
+#         msg = MIMEText(body.encode(jp_encoding), "plain", jp_encoding)
+#
+#         from_jp = Header(sender_name, jp_encoding)
+#         msg['From'] = from_jp
+#         From = gmail_usr
+#         msg['Subject'] = Header(mail_subject, jp_encoding)
+#         msg['To'] = you
+#         to = msg['To']
+#
+#         server.sendmail(From, to, msg.as_string())
+#
+#
+#         print('Email')
+#         if server is not False:
+#             message = '確かにメッセージを送信しました。'
+#             return template('message' ,message=message)
+#
+#         server.close()
+#
+#     else:
+#
+#         print('test')
 
 
 
