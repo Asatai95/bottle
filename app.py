@@ -56,7 +56,7 @@ def test_sub():
     stripe_token = request.forms.get('stripeToken')
     mail_address = request.forms.get('stripeEmail')
 
-    stripe.api_key = stripe_keys['publishable_key']
+    stripe.api_key = stripe_keys['secret_key']
 
     stripe.Charge.create(
         amount=amount,
