@@ -36,6 +36,8 @@ body {
   background-image: url('../img/map.jpeg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .img {
