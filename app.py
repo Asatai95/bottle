@@ -58,7 +58,7 @@ def test_sub():
     )
 
     gmail = stripe.Customer.create(
-        email='customer@example.com'
+        email='asatai918@gmail.com'
     )
 
     charge = stripe.Charge.create(
@@ -107,7 +107,7 @@ def test_sub():
         print('Email')
         if server is not False:
             message = '確かにメッセージを送信しました。'
-            return template('message' ,message=message, amount=amount)
+            return template('message' ,message=message)
 
         server.close()
 
