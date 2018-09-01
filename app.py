@@ -89,7 +89,7 @@ def sendmail():
 
     server.ehlo()
 
-    server.login(gmail_usr, gmail_password)
+    server.login(you, gmail_password)
 
 
     if server is not False:
@@ -99,7 +99,7 @@ def sendmail():
         msg['From'] = you
         From = msg['From']
         msg['Subject'] = Header(mail_subject, jp_encoding)
-        msg['To'] = you
+        msg['To'] = gmail_usr
         to = msg['To']
 
         server.sendmail(From, to, msg.as_string())
