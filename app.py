@@ -97,7 +97,7 @@ def sendmail():
 
         msg = MIMEText(body.encode(jp_encoding), "plain", jp_encoding)
 
-        msg['From'] = Header(sender_name, jp_encoding)
+        msg['From'] = sender_name.encode(jp_encoding)
         From = msg['From']
         msg['Subject'] = Header(mail_subject, jp_encoding)
         msg['To'] = you
