@@ -89,7 +89,7 @@ def sendmail():
 
     server.ehlo()
 
-    server.login(you, gmail_password)
+    server.login(gmail_usr, gmail_password)
 
 
     if server is not False:
