@@ -99,12 +99,11 @@ def sendmail():
         msg['From'] = gmail_usr
         From = msg['From']
         msg['Subject'] = Header(mail_subject, jp_encoding)
-        subject = msg['Subject']
         msg['Bcc'] = you
         msg['To'] = you
         to = msg['To']
 
-        server.sendmail(to, subject, msg)
+        server.sendmail(From, to, msg.as_string())
 
 
         print('Email')
