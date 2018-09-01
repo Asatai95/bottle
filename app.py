@@ -53,8 +53,8 @@ def test_sub():
 
     amount = '500'
 
-    stripe_token = form['stripeToken'].value
-    mail_address = form['stripeEmail'].value
+    stripe_token = ['stripeToken'].value
+    mail_address = ['stripeEmail'].value
 
     stripe.api_key = stripe_keys['publishable_key']
 
