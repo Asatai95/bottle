@@ -1,7 +1,7 @@
 #!/usr/bin/venv python
 # -*- coding: utf_8 -*-
 import MySQLdb
-from bottle import route, run, template, static_file, request, redirect, response, view
+from bottle import get, route, run, template, static_file, request, redirect, response, view
 from email.header import Header
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -31,6 +31,14 @@ stripe.api_key = stripe_keys['secret_key']
 @route("/static/:path#.+#", name='static')
 def test(path):
     return static_file(path, root='static')
+
+@get("/static/img/<filepath:re:.*\.(jpg|png|gif|ico|svg)>")
+def img(filepath):
+    return static_file(filepath, root="static/img")
+
+@get("/static/js/<filepath:re:.*\.js>")
+def js(filepath):
+    return static_file(filepath, root="static/js")
 
 @route("/")
 def top():
@@ -103,7 +111,7 @@ def test_sub():
 
         print('Email')
         if server is not False:
-            message = '確かにメッセージを送信しました。'
+            message = '確かに支払いは完了しました。'
             return template('message' ,message=message)
 
         server.close()

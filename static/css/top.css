@@ -22,3 +22,22 @@ form article label {
 form .submit {
   margin: 15px 0;
 }
+
+body {
+  text-align: center;
+  width: 1064px;
+  background-color: rgba(123, 128, 132, 0.8);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.test {
+  background-image: url('../img/map.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.img {
+  margin: 0 auto;
+}

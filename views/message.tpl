@@ -13,17 +13,18 @@
   <link rel="stylesheet" media='screen and (min-width:376px) and (max-width:768px)' href="static/css/top_pad.css">
   <link rel="stylesheet" media='screen and (min-width:769px)' href="static/css/top.css"> -->
 
-  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type="text/javascript" src="static/js/common.js"></script> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript" src="static/js/test.js"></script>
 
   <title>Heroku</title>
 
 </head>
 <body>
   <div class='test'>
-
+    <div class='img'>
+      <p class='img_sub'><img src="static/img/ninwanko.png" alt=""></p>
+    </div>
     <p class='test_sub'>{{message}}</p>
-
   </div>
 </body>
 
