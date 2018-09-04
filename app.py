@@ -125,7 +125,7 @@ def test_sub():
 @route('/text')
 def text():
 
-    message = '表示します。'
+    message = 'データベースの中身を公開するよー！！'
     print(message)
 
     db = MySQLdb.connect(user='b4da42a09cc349', passwd='dd235253', host='us-cdbr-iron-east-01.cleardb.net', db='heroku_d9c662866ce227f', charset='utf8')
@@ -138,7 +138,7 @@ def text():
     print(test)
 
     result = con.fetchall()
-    result = result[0]
+    result = result[0][0]
     print(result)
 
     return template('message', message=message, main=result)
