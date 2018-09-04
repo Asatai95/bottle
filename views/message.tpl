@@ -27,6 +27,12 @@
     <p class='test_sub'>{{message}}</p>
     <div class='text'>
       <p class='test_sub'>{{main}}</p>
+      <div id='comment'>
+        <form id='form' action="/text" method='POST'>
+          <input id='test' type="text" name='form' maxlength="10">
+          <input class="button" type="submit" value='テスト' />
+        </form>
+      </div>
     </div>
   </div>
 </body>

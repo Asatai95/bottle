@@ -143,6 +143,26 @@ def text():
 
     return template('message', message=message, main=result)
 
+@route('/text', methods='POST')
+def text_db():
+
+    form = request.forms('form')
+    print(form)
+
+    db = MySQLdb.connect(user='b4da42a09cc349', passwd='dd235253', host='us-cdbr-iron-east-01.cleardb.net', db='heroku_d9c662866ce227f', charset='utf8')
+    con = db.cursor()
+    print('???')
+
+    sql = 'insert into test(test) values(%s)'
+    text = con.execute(sql, [form])
+    db.commit()
+    print(text)
+
+    result = con.fetchall()
+    print(result)
+
+    return template('message')
+
 # @route('/email')
 # def sendmail():
 #
