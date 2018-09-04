@@ -142,6 +142,7 @@ def text():
     return template('message', message=message, main=result)
 
 @route('/text_sub', method='POST')
+@view('message')
 def text_db():
 
     form = request.forms.get('form')
