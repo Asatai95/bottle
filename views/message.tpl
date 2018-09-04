@@ -25,6 +25,9 @@
       <p class='img_sub'><img src="static/img/ninwanko.png" alt=""></p>
     </div>
     <p class='test_sub'>{{message}}</p>
+    <div class='text'>
+      <p class='test_sub'>{{main}}</p>
+    </div>
   </div>
 </body>
 

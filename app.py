@@ -125,9 +125,22 @@ def test_sub():
 @route('/text')
 def text():
 
-    message = '確かに支払いは完了しました。'
-    
-    return template('message', message=message)
+    message = '表示します。'
+    print(message)
+
+    db = MySQLdb.connect(user='b4da42a09cc349', passwd='dd235253', host='us-cdbr-iron-east-01.cleardb.net', db='heroku', charset='utf8')
+    con = db.cursor()
+    print('???')
+
+    sql = 'select test from test where id = 1'
+    test = con.execute(sql)
+    db.commit()
+    print(test)
+
+    result = con.fetchall()
+    print(result)
+
+    return template('message', message=message, main=result)
 
 # @route('/email')
 # def sendmail():
