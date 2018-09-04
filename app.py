@@ -126,27 +126,25 @@ def test_sub():
 def text():
 
     message = 'データベースの中身を公開するよー！！'
-    print(message)
+
 
     db = MySQLdb.connect(user='b4da42a09cc349', passwd='dd235253', host='us-cdbr-iron-east-01.cleardb.net', db='heroku_d9c662866ce227f', charset='utf8')
     con = db.cursor()
-    print('???')
 
     sql = 'select test from test where id = 1'
     test = con.execute(sql)
     db.commit()
-    print(test)
+
 
     result = con.fetchall()
     result = result[0][0]
-    print(result)
 
     return template('message', message=message, main=result)
 
 @route('/text', method='POST')
 def text_db():
 
-    form = request.forms ('form')
+    form = request.forms.get('form')
     print(form)
 
     db = MySQLdb.connect(user='b4da42a09cc349', passwd='dd235253', host='us-cdbr-iron-east-01.cleardb.net', db='heroku_d9c662866ce227f', charset='utf8')
