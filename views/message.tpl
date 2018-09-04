@@ -28,8 +28,8 @@
     <div class='text'>
       <p class='test_sub'>{{main}}</p>
       <div id='comment'>
-        <form id='form' action="/text" method='POST'>
-          <input id='test' type="text" name='form' maxlength="10">
+        <form id='form' action="/text" methods='POST'>
+          <input id='test' type="text" name='form' maxlength="10" placeholder='入力してください。'>
           <input class="button" type="submit" value='テスト' />
         </form>
       </div>

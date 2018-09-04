@@ -143,10 +143,10 @@ def text():
 
     return template('message', message=message, main=result)
 
-@route('/text', methods='POST')
+@route('/text', method='POST')
 def text_db():
 
-    form = request.forms('form')
+    form = request.forms.getunicode('form')
     print(form)
 
     db = MySQLdb.connect(user='b4da42a09cc349', passwd='dd235253', host='us-cdbr-iron-east-01.cleardb.net', db='heroku_d9c662866ce227f', charset='utf8')
