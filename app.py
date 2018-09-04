@@ -138,6 +138,7 @@ def text():
     print(test)
 
     result = con.fetchall()
+    result = result[0]
     print(result)
 
     return template('message', message=message, main=result)
