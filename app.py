@@ -141,7 +141,7 @@ def text():
 
     return template('message', message=message, main=result)
 
-@route('/text', method='POST')
+@route('/text_sub', method='POST')
 def text_db():
 
     form = request.forms.get('form')
@@ -159,7 +159,7 @@ def text_db():
     result = con.fetchall()
     print(result)
 
-    return template('message')
+    return result
 
 # @route('/email')
 # def sendmail():
